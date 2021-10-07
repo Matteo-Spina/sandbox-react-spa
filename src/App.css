@@ -62,9 +62,4 @@ main {
   background-color: tomato;
 }
 
-.component {
-  min-width: 30ch;
-  max-width: 45ch;
-  min-height: 30ch;
-  max-height: 45ch;
-}
+

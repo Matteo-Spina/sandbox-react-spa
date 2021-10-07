@@ -1,4 +1,5 @@
 import "./App.css";
+import GenericComponent from "./GenericComponent";
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
           <div className="component"></div>
         </div>
         <div className="row">
-          <div className="component"></div>
-          <div className="component"></div>
+          <GenericComponent />
+          <GenericComponent />
         </div>
       </main>
       {/* <!-- end grid --> */}
