@@ -1,10 +1,11 @@
 import "./App.css";
 import GenericComponent from "./GenericComponent";
+import ArticleBlock from "./Article";
 
 function App() {
   return (
     <div className="App">
-      <header></header>
+      <header className="page-header"></header>
       {/* <!-- grid --> */}
       <main>
         <div className="row">
@@ -17,11 +18,11 @@ function App() {
         </div>
         <div className="row">
           <GenericComponent />
-          <GenericComponent />
+          <ArticleBlock />
         </div>
       </main>
       {/* <!-- end grid --> */}
-      <footer></footer>
+      <footer className="page-footer"></footer>
     </div>
   );
 }

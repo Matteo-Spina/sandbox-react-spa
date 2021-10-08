@@ -1,12 +1,12 @@
-header,
-footer {
+.page-header,
+.page-footer {
   /* size */
   height: 10vh;
   /* debug */
   background-color: lightsteelblue;
 }
 
-header {
+.page-header {
   /* as flex container */
   display: flex;
   flex-direction: column;
