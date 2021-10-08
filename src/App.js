@@ -9,12 +9,12 @@ function App() {
       {/* <!-- grid --> */}
       <main>
         <div className="row">
-          <div className="component"></div>
-          <div className="component"></div>
+          <GenericComponent />
+          <ArticleBlock />          
         </div>
         <div className="row">
-          <div className="component"></div>
-          <div className="component"></div>
+          <ArticleBlock />
+          <GenericComponent />
         </div>
         <div className="row">
           <GenericComponent />
@@ -28,4 +28,3 @@ function App() {
 }
 
 export default App;
-
