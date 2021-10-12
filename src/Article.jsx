@@ -38,7 +38,7 @@ const ArticleHeader = styled.header`
   /* size constraint, override flex */
   max-height: 20%;
   /* fonts - adjust font-size relative to component */
-  font-size: 1 em;
+  font-size: 1em;
   text-align: center;
   /* debug */
   background: forestgreen;

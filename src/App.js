@@ -1,6 +1,7 @@
 import "./App.css";
 import GenericComponent from "./GenericComponent";
 import ArticleBlock from "./Article";
+import OrbitSystem from "./OrbitSystem";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       {/* <!-- grid --> */}
       <main>
         <div className="row">
-          <GenericComponent />
+          <OrbitSystem />
           <ArticleBlock />          
         </div>
         <div className="row">
