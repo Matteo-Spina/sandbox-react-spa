@@ -1,11 +1,15 @@
-import "./GenericComponent.css";
+import styled from "styled-components/macro";
 
-function GenericComponent() {
-  return (
-    <div className="component">
-      {/* debug 30ch lenght */}
-      <p>000000000000000000000000000000</p>
-    </div>
-  );
-}
-export default GenericComponent;
+// interface Row~RowItem RowItem~Component
+const StyledRowItem = styled.div`
+  /* as flex item */
+  flex: 1 0; /* can grow only */
+  margin: 1rem 1rem; /* gap between items */
+  /* size constaints */
+  min-width: 30ch;
+  max-width: 45ch;
+  min-height: 30ch;
+  /* debug */
+`;
+
+export { StyledRowItem as RowItem };

@@ -14,7 +14,6 @@ const ArticleRoot = styled.article`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 0 1rem;
   /* decoration */
   border-radius: 8px;
   border: solid thin;

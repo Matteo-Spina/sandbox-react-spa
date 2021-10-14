@@ -1,5 +1,5 @@
 import "./App.css";
-import GenericComponent from "./GenericComponent";
+import { RowItem } from "./GenericComponent";
 import ArticleBlock from "./Article";
 import OrbitSystem from "./OrbitSystem";
 import { StyleSheetManager } from "styled-components";
@@ -12,16 +12,28 @@ function App() {
         {/* <!-- grid --> */}
         <main>
           <div className="row">
-            <OrbitSystem />
-            <ArticleBlock />
+            <RowItem>
+              <ArticleBlock />
+            </RowItem>
+            <RowItem>
+              <ArticleBlock />
+            </RowItem>
           </div>
           <div className="row">
-            <ArticleBlock />
-            <GenericComponent />
+            <RowItem>
+              <ArticleBlock />
+            </RowItem>
+            <RowItem>
+              <ArticleBlock />
+            </RowItem>
           </div>
           <div className="row">
-            <GenericComponent />
-            <ArticleBlock />
+            <RowItem>
+              <ArticleBlock></ArticleBlock>
+            </RowItem>
+            <RowItem>
+              <ArticleBlock />
+            </RowItem>
           </div>
         </main>
         {/* <!-- end grid --> */}
