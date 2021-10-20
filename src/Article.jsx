@@ -2,13 +2,8 @@ import styled from "styled-components/macro";
 // import "./Article.css";
 
 const ArticleRoot = styled.article`
-  /* size constraints */
-  min-width: 30ch;
-  max-width: 45ch;
-  min-height: 30ch;
-  max-height: 45ch;
   /* size */
-  /* ... */
+  max-width: 35ch;
   /* as flex container */
   display: flex;
   flex-direction: column;
@@ -22,7 +17,7 @@ const ArticleRoot = styled.article`
   font-size: 1rem;
   /* debug */
   background: black;
-
+  /* children */
   & > * {
     width: 100%;
     padding: 8px;
@@ -38,7 +33,7 @@ const ArticleHeader = styled.header`
   max-height: 20%;
   /* fonts - adjust font-size relative to component */
   font-size: 1em;
-  text-align: center;
+  text-align: start;
   /* debug */
   background: forestgreen;
 `;
@@ -65,8 +60,8 @@ function ArticleBlock() {
   return (
     <ArticleRoot>
       <ArticleHeader>
-        <h3>Title</h3>
-        <p>subtitle</p>
+        <h3>00000000000000000000000000000</h3>
+        <p>000000000000000000000000000000</p>
       </ArticleHeader>
       <ArticleContent>
         <p>content</p>

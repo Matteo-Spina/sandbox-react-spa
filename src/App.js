@@ -1,7 +1,7 @@
 import "./App.css";
 import { RowItem } from "./GenericComponent";
 import ArticleBlock from "./Article";
-import OrbitSystem from "./OrbitSystem";
+// import OrbitSystem from "./OrbitSystem";
 import { StyleSheetManager } from "styled-components";
 
 function App() {
