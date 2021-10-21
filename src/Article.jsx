@@ -63,8 +63,8 @@ function ArticleBlock() {
   return (
     <ArticleRoot>
       <ArticleHeader>
-        <h3>00000000000000000000000000000</h3>
-        <p>000000000000000000000000000000</p>
+        <h3>title</h3>
+        <p>subtitle</p>
       </ArticleHeader>
       <ArticleContent>
         <p>content</p>
