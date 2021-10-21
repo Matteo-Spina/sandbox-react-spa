@@ -2,12 +2,13 @@ import styled from "styled-components/macro";
 // import "./Article.css";
 
 const ArticleRoot = styled.article`
-  /* size */
-  max-width: 35ch;
+  /* unaware flex item #warn*/
+  width: 100%;
+  height: 100%;
   /* as flex container */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-start; /* #change */
   align-items: center;
   /* decoration */
   border-radius: 1rem;
@@ -16,7 +17,7 @@ const ArticleRoot = styled.article`
   /* adjust font-size relative to html */
   font-size: 1rem;
   /* debug */
-  /* background: black; */
+  background: lavender;
   
   /* children */
   & > * {
