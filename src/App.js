@@ -1,5 +1,5 @@
 import "./App.css";
-import { RowItem } from "./GenericComponent";
+import { RowItem } from "./RowItem";
 import ArticleBlock from "./Article";
 // import OrbitSystem from "./OrbitSystem";
 import { StyleSheetManager, createGlobalStyle } from "styled-components";

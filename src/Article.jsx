@@ -10,13 +10,14 @@ const ArticleRoot = styled.article`
   justify-content: flex-start;
   align-items: center;
   /* decoration */
-  border-radius: 8px;
+  border-radius: 1rem;
   border: solid thin;
   /* fonts */
   /* adjust font-size relative to html */
   font-size: 1rem;
   /* debug */
-  background: black;
+  /* background: black; */
+  
   /* children */
   & > * {
     width: 100%;
@@ -35,16 +36,18 @@ const ArticleHeader = styled.header`
   font-size: 1em;
   text-align: start;
   /* debug */
-  background: forestgreen;
+  /* background: forestgreen; */
 `;
+
 const ArticleContent = styled.section`
   /* adjust font-size relative to component */
   font-size: 1em;
   text-align: center;
   
   /* debug */
-  background: gold;
+  /* background: gold; */
 `;
+
 const ArticleFooter = styled.footer`
   /* size constraint */
   max-height: 20%;
@@ -53,7 +56,7 @@ const ArticleFooter = styled.footer`
   text-align: center;
   
   /* debug */
-  background: firebrick;
+  /* background: firebrick; */
 `;
 
 function ArticleBlock() {
