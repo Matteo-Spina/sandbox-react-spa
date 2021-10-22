@@ -18,7 +18,7 @@ const ArticleRoot = styled.article`
   font-size: 1rem;
   /* debug */
   background: lavender;
-  
+
   /* children */
   & > * {
     width: 100%;
@@ -44,7 +44,7 @@ const ArticleContent = styled.section`
   /* adjust font-size relative to component */
   font-size: 1em;
   text-align: center;
-  
+
   /* debug */
   /* background: gold; */
 `;
@@ -55,24 +55,25 @@ const ArticleFooter = styled.footer`
   /* fonts - adjust font-size relative to component */
   font-size: 0.75em;
   text-align: center;
-  
+
   /* debug */
   /* background: firebrick; */
 `;
 
-function ArticleBlock() {
+function ArticleBlock({ data, ...rest }) {
+  const { title, subtitle, content, dateTime } = data;
   return (
     <ArticleRoot>
       <ArticleHeader>
-        <h3>title</h3>
-        <p>subtitle</p>
+        <h3>{title || "--"}</h3>
+        <p>{subtitle || "--"}</p>
       </ArticleHeader>
       <ArticleContent>
-        <p>content</p>
+        <p>{content || "--"}</p>
         {/* <img> */}
       </ArticleContent>
       <ArticleFooter>
-        <p>footer</p>
+        <p>{dateTime.toString() || "--"}</p>
       </ArticleFooter>
     </ArticleRoot>
   );

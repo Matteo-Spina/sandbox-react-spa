@@ -13,6 +13,8 @@ const StyledRowItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* cosmetics */
+  padding: 1rem;
   /* debug */
 `;
 
