@@ -79,3 +79,6 @@ function ArticleBlock({ data, ...rest }) {
   );
 }
 export default ArticleBlock;
+
+// -> note <-
+// way: article gets content from data prop (outside fetch)
