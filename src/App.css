@@ -1,4 +1,5 @@
 /* App.css */
+
 .App {
   /*  */
   min-height: 100vh;
@@ -9,70 +10,3 @@
   /* debug */
   /* background-color: ; */
 }
-
-main.subgrid {
-  /*  */
-  /* as grid item */
-  grid-column: 2 / -2;
-  /* as grid container */
-  display: grid;
-  /* -- grid container is flexible but columns are not by themselves ...*/
-  grid-template-columns: repeat(auto-fit, 40ch);
-  /* ... so it is important to center grid inside its container --*/
-  justify-content: center;
-  grid-auto-rows: 35ch;
-  /* debug */
-  background-color: lightgoldenrodyellow;
-}
-
-.page-header {
-  /* as grid item */
-  grid-column: 1 / -1;
-  /* as flex container */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  /* debug */
-  /* background-color: lightpink; */
-}
-
-.page-footer {
-  /* as grid item */
-  grid-column: 1 / -1;
-  /* as flex container */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  /* debug */
-  /* background-color: lightpink; */
-}
-
-.row {
-  /* as grid item */
-  grid-column: 2;
-  width: 100%;
-  /* as flex container */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* will be applied to wrapped lines */
-  /* debug */
-  /* background-color: lightgreen; */
-  border-width: 0 1px;
-  border-style: dashed;
-}
-
-/* able to grow only */
-/* .row > * {
-  flex: 1 0; 
-  min-width: min(30ch, 100%);
-  border: solid thin;
-} */
-
-/* .row > div:nth-child(even) {
-  background-color: dodgerblue;
-}
-.row > div:nth-child(odd) {
-  background-color: tomato;
-} */
