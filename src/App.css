@@ -1,39 +1,52 @@
 /* App.css */
-
-.page-header,
-.page-footer {
-  /* size */
-  height: 10vh;
+.App {
+  /*  */
+  min-height: 100vh;
+  /* as grid container */
+  display: grid;
+  grid-template-columns: 1fr min(80ch, 100%) 1fr;
+  grid-template-rows: [header-start] 10vh [main-start] 1fr [footer-start] 10vh;
   /* debug */
-  background-color: whitesmoke;
+  /* background-color: ; */
+}
+
+main.subgrid {
+  /*  */
+  /* as grid item */
+  grid-column: 2 / -2;
+  /* as grid container */
+  display: grid;
+  /* -- grid container is flexible but columns are not by themselves ...*/
+  grid-template-columns: repeat(auto-fit, 40ch);
+  /* ... so it is important to center grid inside its container --*/
+  justify-content: center;
+  grid-auto-rows: 35ch;
+  /* debug */
+  background-color: lightgoldenrodyellow;
 }
 
 .page-header {
+  /* as grid item */
+  grid-column: 1 / -1;
   /* as flex container */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  /* debug */
+  /* background-color: lightpink; */
 }
 
-/* - css curve -
-  header > div {
-  width: 90%;
-  flex: 0 0 80%;
-  background-color: white;
-  border-radius: 32px 32px 0 0;
-} */
-
-main {
-  margin: 10px 0;
-  /* as grid container */
-  display: grid;
-  grid-template-columns: 1fr min(80ch, 100%) 1fr;
-  /* grid-auto-rows: ...; */
-  justify-items: center; /* default: stretch */
-  row-gap: 1rem;
+.page-footer {
+  /* as grid item */
+  grid-column: 1 / -1;
+  /* as flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   /* debug */
-  /* background-color: lightgoldenrodyellow; */
+  /* background-color: lightpink; */
 }
 
 .row {
@@ -63,5 +76,3 @@ main {
 .row > div:nth-child(odd) {
   background-color: tomato;
 } */
-
-

@@ -40,10 +40,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     /* theme */
-    font-family: "RubikLight", Verdana, sans-serif;
-    
-    /* size */
-    min-height: 100vh;
+    font-family: "RubikLight", Verdana, sans-serif;    
   }
 `;
 
@@ -60,33 +57,25 @@ function App() {
       <>
         <GlobalStyle />
         <div className="App">
-          <header className="page-header"></header>
           {/* <!-- grid --> */}
-          <main>
-            <div className="row">
-              <RowItem>
-                <ArticleBlock data={testData} />
-              </RowItem>
-              <RowItem>
-                <ArticleBlock data={testData} />
-              </RowItem>
-            </div>
-            <div className="row">
-              <RowItem>
-                <ArticleBlock data={testData} />
-              </RowItem>
-              <RowItem>
-                <ArticleBlock data={testData} />
-              </RowItem>
-            </div>
-            <div className="row">
-              <RowItem>
-                <ArticleBlock data={testData} />
-              </RowItem>
-              <RowItem>
-                <ArticleBlock data={testData} />
-              </RowItem>
-            </div>
+          <header className="page-header"></header>
+          <main className="subgrid">
+            {/* subgrid */}
+            <RowItem >
+              <ArticleBlock data={testData} />
+            </RowItem>
+            <RowItem >
+              <ArticleBlock data={testData} />
+            </RowItem>
+            <RowItem >
+              <ArticleBlock data={testData} />
+            </RowItem>
+            <RowItem full>
+              <div style={{width: "100%", height: "100%", backgroundColor: "lavender"}}></div>
+            </RowItem>
+            <RowItem >
+              <ArticleBlock data={testData} />
+            </RowItem>
           </main>
           {/* <!-- end grid --> */}
           <footer className="page-footer"></footer>
