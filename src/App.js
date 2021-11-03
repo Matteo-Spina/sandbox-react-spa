@@ -19,18 +19,28 @@ const GlobalStyle = createGlobalStyle`
   
   html {
     box-sizing: border-box;
-    font-size: 17px;
+    
+    --font-large: 17px;
+    --font-medium: 15px;
+    --font-small: 13px;
+    
+    --node-pantone: #339933;
+    --card-shadow: -4px -4px 12px 0px rgba(40, 15, 15, 0.75);
+    --card-shadow-inset: inset 0px 0px 40px 0px rgba(40, 15, 15, 0.20);
+    --card-gradient: linear-gradient(307deg,#66cc33 0%, #339933 80%);
+      
+    font-size: var(--font-large);
   }
 
   @media (max-width: 900px) {
     html {
-      font-size: 15px;
+      font-size: var(--font-medium);
     }
   }
   
   @media (max-width: 400px) {
     html {
-      font-size: 13px;
+      font-size: var(--font-small);
     }
   }
 

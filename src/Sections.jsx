@@ -46,9 +46,9 @@ const StyledMain = styled.main`
   grid-template-columns: repeat(auto-fit, 40ch);
   /* ... so it is important to center grid inside its container --*/
   justify-content: center;
-  grid-auto-rows: 35ch;
+  grid-auto-rows: 10ch;
   /* debug */
-  background-color: lightgoldenrodyellow;
+  /* background-color: lightgoldenrodyellow; */
 `;
 
 function MainSection() {
@@ -58,13 +58,46 @@ function MainSection() {
       <RowItem>
         <ArticleBlock data={testData} />
       </RowItem>
-      <RowItem>
-        <ArticleBlock data={testData} />
+      <RowItem quarter>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: "lavender",
+          }}
+        ></div>
+      </RowItem>
+      <RowItem quarter>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: "lavender",
+          }}
+        ></div>
+      </RowItem>
+      <RowItem quarter>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: "lavender",
+          }}
+        ></div>
+      </RowItem>
+      <RowItem quarter>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: "lavender",
+          }}
+        ></div>
       </RowItem>
       <RowItem>
         <ArticleBlock data={testData} />
       </RowItem>
-      <RowItem full>
+      <RowItem full half>
         <div
           style={{
             width: "100%",

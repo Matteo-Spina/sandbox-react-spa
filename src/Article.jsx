@@ -5,19 +5,21 @@ const ArticleRoot = styled.article`
   /* unaware flex item #warn*/
   width: 100%;
   height: 100%;
+  padding: 32px;
   /* as flex container */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* #change */
   align-items: center;
   /* decoration */
+  background: var(--card-gradient);
+  box-shadow: var(--card-shadow);
   border-radius: 1rem;
-  border: solid thin;
+  border: solid 4px black;
   /* fonts */
   /* adjust font-size relative to html */
   font-size: 1rem;
   /* debug */
-  background: lavender;
 
   /* children */
   & > * {
