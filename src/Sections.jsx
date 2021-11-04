@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 import { RowItem } from "./RowItem";
-import ArticleBlock from "./Article";
+import Article from "./Article";
+import List from "./Lists";
 // import OrbitSystem from "./OrbitSystem";
 
 const StyledHeader = styled.header`
@@ -34,6 +35,11 @@ const testData = {
   subtitle: "native app",
   content: "working on it",
   dateTime: new Date("1995-12-17T03:24:00"),
+  links: [
+    { name: "uno", value: 1 },
+    { name: "due", value: 2 },
+    { name: "tre", value: 3 },
+  ],
 };
 
 const StyledMain = styled.main`
@@ -46,7 +52,7 @@ const StyledMain = styled.main`
   grid-template-columns: repeat(auto-fit, 40ch);
   /* ... so it is important to center grid inside its container --*/
   justify-content: center;
-  grid-auto-rows: 10ch;
+  grid-auto-rows: 20ch;
   /* debug */
   /* background-color: lightgoldenrodyellow; */
 `;
@@ -56,9 +62,10 @@ function MainSection() {
     <StyledMain>
       {/* subgrid */}
       <RowItem>
-        <ArticleBlock data={testData} />
+        <Article data={testData} />
       </RowItem>
-      <RowItem quarter>
+      <List items={testData.links} />
+      <RowItem fullOnX halfOnY>
         <div
           style={{
             width: "100%",
@@ -67,7 +74,7 @@ function MainSection() {
           }}
         ></div>
       </RowItem>
-      <RowItem quarter>
+      <RowItem fullOnX halfOnY>
         <div
           style={{
             width: "100%",
@@ -76,7 +83,7 @@ function MainSection() {
           }}
         ></div>
       </RowItem>
-      <RowItem quarter>
+      <RowItem fullOnX halfOnY>
         <div
           style={{
             width: "100%",
@@ -85,29 +92,47 @@ function MainSection() {
           }}
         ></div>
       </RowItem>
-      <RowItem quarter>
+      <RowItem fullOnX halfOnY>
         <div
           style={{
-            width: "100%",
+            width: "25%",
             height: "100%",
             backgroundColor: "lavender",
           }}
         ></div>
-      </RowItem>
-      <RowItem>
-        <ArticleBlock data={testData} />
-      </RowItem>
-      <RowItem full half>
         <div
           style={{
-            width: "100%",
+            width: "25%",
+            height: "100%",
+            backgroundColor: "tomato",
+          }}
+        ></div>
+        <div
+          style={{
+            width: "25%",
             height: "100%",
             backgroundColor: "lavender",
           }}
         ></div>
+        <div
+          style={{
+            width: "25%",
+            height: "100%",
+            backgroundColor: "tomato",
+          }}
+        ></div>
       </RowItem>
-      <RowItem>
-        <ArticleBlock data={testData} />
+      <RowItem halfOnY>
+        <Article type="mini" data={testData} />
+      </RowItem>
+      <RowItem halfOnY>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: "yellow",
+          }}
+        ></div>
       </RowItem>
     </StyledMain>
   );

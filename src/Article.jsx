@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 // import "./Article.css";
 
-const ArticleRoot = styled.article`
+const ArticleElem = styled.article`
   /* unaware flex item #warn*/
   width: 100%;
   height: 100%;
@@ -12,10 +12,10 @@ const ArticleRoot = styled.article`
   justify-content: flex-start; /* #change */
   align-items: center;
   /* decoration */
-  background: var(--card-gradient);
-  box-shadow: var(--card-shadow);
-  border-radius: 1rem;
-  border: solid 4px black;
+  background: var(--node-gradient);
+  box-shadow: var(--card-shadow), var(--card-shadow-2);
+  border-radius: var(--card-border-radius);
+  border: var(--card-border);
   /* fonts */
   /* adjust font-size relative to html */
   font-size: 1rem;
@@ -42,7 +42,7 @@ const ArticleHeader = styled.header`
   /* background: forestgreen; */
 `;
 
-const ArticleContent = styled.section`
+const ArticleMain = styled.section`
   /* adjust font-size relative to component */
   font-size: 1em;
   text-align: center;
@@ -65,22 +65,41 @@ const ArticleFooter = styled.footer`
 function ArticleBlock({ data, ...rest }) {
   const { title, subtitle, content, dateTime } = data;
   return (
-    <ArticleRoot>
+    <ArticleElem>
       <ArticleHeader>
         <h3>{title || "--"}</h3>
         <p>{subtitle || "--"}</p>
       </ArticleHeader>
-      <ArticleContent>
+      <ArticleMain>
         <p>{content || "--"}</p>
         {/* <img> */}
-      </ArticleContent>
+      </ArticleMain>
       <ArticleFooter>
         <p>{dateTime.toString() || "--"}</p>
       </ArticleFooter>
-    </ArticleRoot>
+    </ArticleElem>
   );
 }
-export default ArticleBlock;
+
+function ArticleBlockMini({data, ...rest}) {
+  const { title, subtitle, dateTime } = data;
+  return (
+    <ArticleElem>
+      <ArticleHeader>
+        <h3>{title || "--"}</h3>
+        <p>{subtitle || "--"}</p>
+      </ArticleHeader>
+      <ArticleFooter>
+        <p>{dateTime.toString() || "--"}</p>
+      </ArticleFooter>
+    </ArticleElem>
+  );
+}
+
+function Article({type, ...rest}) {
+  return (type === "mini" ? <ArticleBlockMini {...rest} /> : <ArticleBlock {...rest} />)
+}
+export default Article;
 
 // -> note <-
 // way: article gets content from data prop (outside fetch)

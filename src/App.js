@@ -19,15 +19,27 @@ const GlobalStyle = createGlobalStyle`
   
   html {
     box-sizing: border-box;
-    
+    /* fonts */
     --font-large: 17px;
     --font-medium: 15px;
     --font-small: 13px;
-    
-    --node-pantone: #339933;
-    --card-shadow: -4px -4px 12px 0px rgba(40, 15, 15, 0.75);
-    --card-shadow-inset: inset 0px 0px 40px 0px rgba(40, 15, 15, 0.20);
-    --card-gradient: linear-gradient(307deg,#66cc33 0%, #339933 80%);
+    /* colors */
+    --color-body: orange;
+    --color-node-1: #339933;
+    --color-node-2: #66cc33;
+    --color-shadow-1: hsla(0, 11%, 20%, 0.74);
+    --color-shadow-2: hsla(3, 100%, 50%, 0.66);
+    --color-border: black;
+    /* backgrounds */
+    --node-gradient: linear-gradient(307deg,var(--color-node-2) 0%, var(--color-node-1) 80%);
+    --card-gradient: linear-gradient(90deg,rgba(210,191,191,0.29) 0%, rgba(226,215,215,0.12) 80%);
+    /* shadows */    
+    --card-shadow: 0px 2px 2px 0px rgba(40, 15, 15, 0.75);
+    --card-shadow-2: 0px 2px 8px 0px var(--color-shadow-2);
+    /* borders */
+    --border-width: 2px;
+    --card-border: var(--border-width) solid var(--color-border);
+    --card-border-radius: 8px;
       
     font-size: var(--font-large);
   }
@@ -51,7 +63,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     /* theme */
-    font-family: "RubikLight", Verdana, sans-serif;    
+    font-family: "RubikLight", Verdana, sans-serif;
+    background: var(--color-body);
   }
 `;
 
