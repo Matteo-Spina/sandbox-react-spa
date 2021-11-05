@@ -13,7 +13,7 @@ const ArticleElem = styled.article`
   align-items: center;
   /* decoration */
   background: var(--node-gradient);
-  box-shadow: var(--card-shadow), var(--card-shadow-2);
+  box-shadow: var(--card-shadow-1), var(--card-shadow-2);
   border-radius: var(--card-border-radius);
   border: var(--card-border);
   /* fonts */

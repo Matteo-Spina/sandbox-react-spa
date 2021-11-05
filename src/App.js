@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
     --node-gradient: linear-gradient(307deg,var(--color-node-2) 0%, var(--color-node-1) 80%);
     --card-gradient: linear-gradient(90deg,rgba(210,191,191,0.29) 0%, rgba(226,215,215,0.12) 80%);
     /* shadows */    
-    --card-shadow: 0px 2px 2px 0px rgba(40, 15, 15, 0.75);
+    --card-shadow-1: 0px 2px 2px 0px var(--color-shadow-1);
     --card-shadow-2: 0px 2px 8px 0px var(--color-shadow-2);
     /* borders */
     --border-width: 2px;

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import { RowItem } from "./RowItem";
 import Article from "./Article";
-import List from "./Lists";
+import List from "./Temporary";
 // import OrbitSystem from "./OrbitSystem";
 
 const StyledHeader = styled.header`

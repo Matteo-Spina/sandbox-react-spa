@@ -7,7 +7,7 @@ const StyledListItem = styled.div`
   margin-bottom: 2ch;
   /* decoration */
   background: var(--card-gradient);
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--card-shadow-1), var(--card-shadow-2);
   border-radius: var(--card-border-radius);
   border: var(--card-border);
 `;
