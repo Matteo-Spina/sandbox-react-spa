@@ -5,14 +5,14 @@ import { GridItem, Tile } from "./Items";
   list items are divs with a tile-looking
 */
 const StyledListItem = styled(Tile)`
-  width: 100%;
-  height: 8ch;
+  width: ${(props) => (props.square ? "100px" : "100%")};
+  height: 100%;
   margin-bottom: 2ch;
 `;
 
-function ListItem({ item }) {
+function ListItem({ item, square }) {
   return (
-    <StyledListItem>
+    <StyledListItem square={square}>
       <span> {item.name} </span>
     </StyledListItem>
   );
@@ -25,17 +25,17 @@ function ListItem({ item }) {
 */
 const StyledList = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: ${(props) => (props.horizontal ? "row" : "column")};
+  justify-content: ${(props) => (props.horizontal ? "space-around" : "flex-start")};
 `;
 
-function List({ items }) {
+function List({ items, horizontal, squareItems, ...rest }) {
   return (
     // placed directly on the grid?
-    <GridItem>
-      <StyledList>
+    <GridItem {...rest}>
+      <StyledList horizontal={horizontal || false}>
         {items.map((item) => (
-          <ListItem item={item} />
+          <ListItem item={item} square={squareItems || false} />
         ))}
       </StyledList>
     </GridItem>
@@ -43,3 +43,5 @@ function List({ items }) {
 }
 
 export default List;
+
+// horizontal - vertical

@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import { RowItem } from "./RowItem";
+import { GridItem } from "./Items";
 import Article from "./Article";
 import List from "./Temporary";
 // import OrbitSystem from "./OrbitSystem";
@@ -60,12 +61,13 @@ const StyledMain = styled.main`
 function MainSection() {
   return (
     <StyledMain>
-      {/* subgrid */}
+      {/* top spot */}
       <RowItem>
         <Article data={testData} />
       </RowItem>
       <List items={testData.links} />
-      <RowItem fullOnX halfOnY>
+      {/* Base */}
+      <GridItem fullOnX halfOnY>
         <div
           style={{
             width: "100%",
@@ -73,8 +75,8 @@ function MainSection() {
             backgroundColor: "lavender",
           }}
         ></div>
-      </RowItem>
-      <RowItem fullOnX halfOnY>
+      </GridItem>
+      <GridItem fullOnX halfOnY>
         <div
           style={{
             width: "100%",
@@ -82,8 +84,8 @@ function MainSection() {
             backgroundColor: "lavender",
           }}
         ></div>
-      </RowItem>
-      <RowItem fullOnX halfOnY>
+      </GridItem>
+      <GridItem fullOnX halfOnY>
         <div
           style={{
             width: "100%",
@@ -91,41 +93,13 @@ function MainSection() {
             backgroundColor: "lavender",
           }}
         ></div>
-      </RowItem>
-      <RowItem fullOnX halfOnY>
-        <div
-          style={{
-            width: "25%",
-            height: "100%",
-            backgroundColor: "lavender",
-          }}
-        ></div>
-        <div
-          style={{
-            width: "25%",
-            height: "100%",
-            backgroundColor: "tomato",
-          }}
-        ></div>
-        <div
-          style={{
-            width: "25%",
-            height: "100%",
-            backgroundColor: "lavender",
-          }}
-        ></div>
-        <div
-          style={{
-            width: "25%",
-            height: "100%",
-            backgroundColor: "tomato",
-          }}
-        ></div>
-      </RowItem>
+      </GridItem>
+      {/* Tools */}
+      <List fullOnX halfOnY horizontal squareItems items={testData.links} />
       <RowItem halfOnY>
         <Article type="mini" data={testData} />
       </RowItem>
-      <RowItem halfOnY>
+      <GridItem halfOnY>
         <div
           style={{
             width: "100%",
@@ -133,7 +107,7 @@ function MainSection() {
             backgroundColor: "yellow",
           }}
         ></div>
-      </RowItem>
+      </GridItem>
     </StyledMain>
   );
 }
