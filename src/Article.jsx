@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import { Tile } from "./Items";
 
-const ArticleElem = styled(Tile)`
+const StyledArticle = styled(Tile)`
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -24,7 +24,7 @@ const ArticleElem = styled(Tile)`
   }
 `;
 
-const ArticleHeader = styled.header`
+const StyledArticleHeader = styled.header`
   /* size constraint, override flex */
   max-height: 20%;
   /* fonts - adjust font-size relative to component */
@@ -34,7 +34,7 @@ const ArticleHeader = styled.header`
   /* background: forestgreen; */
 `;
 
-const ArticleMain = styled.section`
+const StyledArticleMain = styled.section`
   /* adjust font-size relative to component */
   font-size: 1em;
   text-align: center;
@@ -43,7 +43,7 @@ const ArticleMain = styled.section`
   /* background: gold; */
 `;
 
-const ArticleFooter = styled.footer`
+const StyledArticleFooter = styled.footer`
   /* size constraint */
   max-height: 20%;
   /* fonts - adjust font-size relative to component */
@@ -55,36 +55,36 @@ const ArticleFooter = styled.footer`
 `;
 
 function ArticleBlock({ data, ...rest }) {
-  const { title, subtitle, content, dateTime } = data;
+  const { title, subtitle, content, dateTime, colors } = data;
   return (
-    <ArticleElem>
-      <ArticleHeader>
+    <StyledArticle colorA={colors.base} colorB={colors.lighter || colors.darker}>
+      <StyledArticleHeader>
         <h3>{title || "--"}</h3>
         <p>{subtitle || "--"}</p>
-      </ArticleHeader>
-      <ArticleMain>
+      </StyledArticleHeader>
+      <StyledArticleMain>
         <p>{content || "--"}</p>
         {/* <img> */}
-      </ArticleMain>
-      <ArticleFooter>
+      </StyledArticleMain>
+      <StyledArticleFooter>
         <p>{dateTime.toString() || "--"}</p>
-      </ArticleFooter>
-    </ArticleElem>
+      </StyledArticleFooter>
+    </StyledArticle>
   );
 }
 
 function ArticleBlockMini({data, ...rest}) {
-  const { title, subtitle, dateTime } = data;
+  const { title, subtitle, dateTime, colors } = data;
   return (
-    <ArticleElem>
-      <ArticleHeader>
+    <StyledArticle colorA={colors.base} colorB={colors.lighter || colors.darker}>
+      <StyledArticleHeader>
         <h3>{title || "--"}</h3>
         <p>{subtitle || "--"}</p>
-      </ArticleHeader>
-      <ArticleFooter>
+      </StyledArticleHeader>
+      <StyledArticleFooter>
         <p>{dateTime.toString() || "--"}</p>
-      </ArticleFooter>
-    </ArticleElem>
+      </StyledArticleFooter>
+    </StyledArticle>
   );
 }
 

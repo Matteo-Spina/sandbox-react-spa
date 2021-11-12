@@ -15,17 +15,13 @@ const StyledGridItem = styled.div`
   "Tile" - Decorative component: it carries styles for a tile-looking div
 */
 // helper for StyledTile receive color object as arg
-const BackgroundTemplate = css`
-  background: radial-gradient(
-    circle farthest-corner at top left,
-    ${(props) => props.colorA || "var(--color-node-1)"} 0%,
-    ${(props) => props.colorB || "var(--color-node-2)"} 150%
-  );
-`;
 
 // WARNING: it does not define sizes!
 const StyledTile = styled.div`
-  ${BackgroundTemplate};
+  /* background: radial-gradient( circle farthest-corner at top left,
+    ${(props) => props.colorA} 0%,
+    ${(props) => props.colorB} 150%); */
+  background: ${(props) => props.colorA};
   box-shadow: 0px 2px 2px 0px var(--color-shadow-1),
     0px 2px 8px 0px var(--color-shadow-2);
   /* border radius are fixed */

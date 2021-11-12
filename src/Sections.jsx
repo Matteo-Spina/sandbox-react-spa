@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 import { GridItem } from "./Items";
 import Article from "./Article";
 import List from "./Temporary";
+import testData from "./data.js";
 // import OrbitSystem from "./OrbitSystem";
 
 const StyledHeader = styled.header`
@@ -30,20 +31,7 @@ const StyledFooter = styled.footer`
 `;
 // function Footer() { }
 
-const testData = {
-  title: "Node",
-  subtitle: "native app",
-  content: "working on it",
-  dateTime: new Date("1995-12-17T03:24:00"),
-  color: {
-    main: "", secondary: ""
-  },
-  links: [
-    { name: "uno", value: 1 },
-    { name: "due", value: 2 },
-    { name: "tre", value: 3 },
-  ],
-};
+
 
 const StyledMain = styled.main`
   /*  */
@@ -65,30 +53,31 @@ function MainSection() {
     <StyledMain>
       {/* top spot */}
       <GridItem>
-        <Article data={testData} />
+        <Article data={testData.top.article} />
       </GridItem>
       <GridItem>
-        <List items={testData.links} />
+        <List items={testData.top.list} />
       </GridItem>
-      {/* Base */}
+      {/* base */}
       <GridItem fullOnX halfOnY>
-        <Article data={testData}></Article>
-      </GridItem>
-      <GridItem fullOnX halfOnY>
-        <Article data={testData}></Article>
+        <Article data={testData.top.article}></Article>
       </GridItem>
       <GridItem fullOnX halfOnY>
-        <Article data={testData}></Article>
+        <Article data={testData.top.article}></Article>
       </GridItem>
-      {/* Tools */}
       <GridItem fullOnX halfOnY>
-        <List horizontal squareItems items={testData.links} />
+        <Article data={testData.top.article}></Article>
+      </GridItem>
+      {/* tools */}
+      <GridItem fullOnX halfOnY>
+        <List horizontal squareItems items={testData.others.list} />
+      </GridItem>
+      {/* others */}
+      <GridItem halfOnY>
+        <Article type="mini" data={testData.others.articleMini} />
       </GridItem>
       <GridItem halfOnY>
-        <Article type="mini" data={testData} />
-      </GridItem>
-      <GridItem halfOnY>
-        <List items={testData.links} />
+        <List items={testData.others.list} />
       </GridItem>
     </StyledMain>
   );

@@ -12,9 +12,10 @@ const StyledListItem = styled(Tile)`
 `;
 
 function ListItem({ item, square }) {
+  let colors = item.link.colors
   return (
-    <StyledListItem square={square}>
-      <span> {item.name} </span>
+    <StyledListItem square={square} colorA={colors.base} colorB={colors.lighter || colors.darker}>
+      <span> {item.link.name} </span>
     </StyledListItem>
   );
 }
