@@ -1,26 +1,18 @@
 import styled from "styled-components/macro";
-// import "./Article.css";
+import { Tile } from "./Items";
 
-const ArticleElem = styled.article`
-  /* unaware flex item #warn*/
+const ArticleElem = styled(Tile)`
   width: 100%;
   height: 100%;
-  padding: 32px;
+  padding: 1rem;
   /* as flex container */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* #change */
   align-items: center;
-  /* decoration */
-  background: var(--node-gradient);
-  box-shadow: var(--card-shadow-1), var(--card-shadow-2);
-  border-radius: var(--card-border-radius);
-  border: var(--card-border);
   /* fonts */
   /* adjust font-size relative to html */
   font-size: 1rem;
-  /* debug */
-
   /* children */
   & > * {
     width: 100%;

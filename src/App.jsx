@@ -1,9 +1,6 @@
 import "./App.css";
 import { Header, Footer, Main } from "./Sections";
-import {
-  StyleSheetManager,
-  createGlobalStyle,
-} from "styled-components";
+import { StyleSheetManager, createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   /* use like index.css */
@@ -27,6 +24,13 @@ const GlobalStyle = createGlobalStyle`
     --color-body: orange;
     --color-node-1: #339933;
     --color-node-2: #66cc33;
+    --color-react: #61dafb;
+    --color-react-2: #282c34;
+	  --cra-color-primary: #09d3ac;
+	  --cra-color-background: #303846;
+    --sc-color-primary: palevioletred;
+    --sc-background: rgba(0, 0, 0, 0) linear-gradient(20deg, rgb(33, 33, 33), rgb(66, 66, 66)) repeat scroll 0% 0%;
+    
     --color-shadow-1: hsla(0, 11%, 20%, 0.74);
     --color-shadow-2: hsla(3, 100%, 50%, 0.66);
     --color-border: black;

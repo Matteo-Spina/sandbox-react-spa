@@ -1,13 +1,14 @@
 import styled from "styled-components/macro";
-import { GridItem, Tile } from "./Items";
+import { Tile } from "./Items";
 
 /* 
   list items are divs with a tile-looking
 */
 const StyledListItem = styled(Tile)`
-  width: ${(props) => (props.square ? "100px" : "100%")};
-  height: 100%;
-  margin-bottom: 2ch;
+  /* not flexible on main axis - take up all space in cross axis */
+  width: ${(props) => (props.square ? "150px" : "100%")};
+  height: ${(props) => (props.square ? "150px" : "calc((20ch - 1rem) / 2 - 1rem)")};
+  margin-bottom: ${(props) => (props.square ? "0" : "1rem")};
 `;
 
 function ListItem({ item, square }) {
@@ -26,19 +27,21 @@ function ListItem({ item, square }) {
 const StyledList = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.horizontal ? "row" : "column")};
-  justify-content: ${(props) => (props.horizontal ? "space-around" : "flex-start")};
+  justify-content: ${(props) =>
+    props.horizontal ? "space-around" : "flex-start"};
+  align-items: center;
+  /* take up all parent space */
+  width: 100%;
+  height: 100%;
 `;
 
-function List({ items, horizontal, squareItems, ...rest }) {
+function List({ items, horizontal, squareItems }) {
   return (
-    // placed directly on the grid?
-    <GridItem {...rest}>
-      <StyledList horizontal={horizontal || false}>
-        {items.map((item) => (
-          <ListItem item={item} square={squareItems || false} />
-        ))}
-      </StyledList>
-    </GridItem>
+    <StyledList horizontal={horizontal || false}>
+      {items.map((item) => (
+        <ListItem item={item} square={squareItems || false} />
+      ))}
+    </StyledList>
   );
 }
 

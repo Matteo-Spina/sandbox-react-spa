@@ -1,5 +1,4 @@
 import styled from "styled-components/macro";
-import { RowItem } from "./RowItem";
 import { GridItem } from "./Items";
 import Article from "./Article";
 import List from "./Temporary";
@@ -36,6 +35,9 @@ const testData = {
   subtitle: "native app",
   content: "working on it",
   dateTime: new Date("1995-12-17T03:24:00"),
+  color: {
+    main: "", secondary: ""
+  },
   links: [
     { name: "uno", value: 1 },
     { name: "due", value: 2 },
@@ -62,51 +64,31 @@ function MainSection() {
   return (
     <StyledMain>
       {/* top spot */}
-      <RowItem>
+      <GridItem>
         <Article data={testData} />
-      </RowItem>
-      <List items={testData.links} />
+      </GridItem>
+      <GridItem>
+        <List items={testData.links} />
+      </GridItem>
       {/* Base */}
       <GridItem fullOnX halfOnY>
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "lavender",
-          }}
-        ></div>
+        <Article data={testData}></Article>
       </GridItem>
       <GridItem fullOnX halfOnY>
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "lavender",
-          }}
-        ></div>
+        <Article data={testData}></Article>
       </GridItem>
       <GridItem fullOnX halfOnY>
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "lavender",
-          }}
-        ></div>
+        <Article data={testData}></Article>
       </GridItem>
       {/* Tools */}
-      <List fullOnX halfOnY horizontal squareItems items={testData.links} />
-      <RowItem halfOnY>
-        <Article type="mini" data={testData} />
-      </RowItem>
+      <GridItem fullOnX halfOnY>
+        <List horizontal squareItems items={testData.links} />
+      </GridItem>
       <GridItem halfOnY>
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "yellow",
-          }}
-        ></div>
+        <Article type="mini" data={testData} />
+      </GridItem>
+      <GridItem halfOnY>
+        <List items={testData.links} />
       </GridItem>
     </StyledMain>
   );
