@@ -1,6 +1,5 @@
-import "./App.css";
 import { Header, Footer, Main } from "./Sections";
-import { StyleSheetManager, createGlobalStyle } from "styled-components";
+import styled, { StyleSheetManager, createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   /* use like index.css */
@@ -72,17 +71,25 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const StyledApp = styled.div`
+  min-height: 100vh;
+  /* as grid container */
+  display: grid;
+  grid-template-columns: 1fr min(80ch, 100%) 1fr;
+  grid-template-rows: [header-start] 10vh [main-start] 1fr [footer-start] 10vh;
+`
+
 function App() {
   return (
     <StyleSheetManager disableVendorPrefixes>
       <>
         <GlobalStyle />
-        <div className="App">
+        <StyledApp>
           {/* <!-- grid --> */}
           <Header />
           <Main />
           <Footer />
-        </div>
+        </StyledApp>
       </>
     </StyleSheetManager>
   );
