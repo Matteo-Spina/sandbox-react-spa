@@ -1,12 +1,17 @@
+// keys TODO
+// "node", "react", ...
+
 // define colors interface
-// ...
-//  colors
+// {base: <color>, lighter? : <color> , darker?: <color>}
+// TODO move to array
+// const colors = [Node: {...}, React: {...}]
 const colorsNode = { base: "#339933", lighter: "#66cc33" };
 const colorsReact = { base: "#61dafb", darker: "#282c34" };
 const colorsCra = { base: "#09d3ac", darker: "#303846" };
 const colorsSC = { base: "palevioletred" };
 
 // import logos
+// ...
 
 // brand interface
 // ...
