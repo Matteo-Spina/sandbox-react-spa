@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components/macro";
+import styled from "styled-components/macro";
 
 /* 
   "Grid Item" - Structural component: defines a generic grid item
@@ -6,7 +6,7 @@ import styled, { css } from "styled-components/macro";
 */
 const StyledGridItem = styled.div`
   /* default size: [2row X 1col] */
-  grid-row: ${(props) => (props.halfOnY ? "span 1" : "span 2")};
+  grid-row: span 1;
   grid-column: ${(props) => (props.fullOnX ? "1 / -1" : "span 1")};
   padding: 1rem;
 `;

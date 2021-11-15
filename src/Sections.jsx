@@ -31,8 +31,6 @@ const StyledFooter = styled.footer`
 `;
 // function Footer() { }
 
-
-
 const StyledMain = styled.main`
   /*  */
   /* as grid item */
@@ -43,7 +41,7 @@ const StyledMain = styled.main`
   grid-template-columns: repeat(auto-fit, 40ch);
   /* ... so it is important to center grid inside its container --*/
   justify-content: center;
-  grid-auto-rows: 20ch;
+  grid-auto-rows: max-content;
   /* debug */
   /* background-color: lightgoldenrodyellow; */
 `;
@@ -59,24 +57,24 @@ function MainSection() {
         <List items={testData.top.list} />
       </GridItem>
       {/* base */}
-      <GridItem fullOnX halfOnY>
+      <GridItem fullOnX>
         <Article data={testData.top.article}></Article>
       </GridItem>
-      <GridItem fullOnX halfOnY>
+      <GridItem fullOnX>
         <Article data={testData.top.article}></Article>
       </GridItem>
-      <GridItem fullOnX halfOnY>
+      <GridItem fullOnX>
         <Article data={testData.top.article}></Article>
       </GridItem>
       {/* tools */}
-      <GridItem fullOnX halfOnY>
+      <GridItem fullOnX>
         <List horizontal squareItems items={testData.others.list} />
       </GridItem>
       {/* others */}
-      <GridItem halfOnY>
+      <GridItem>
         <Article type="mini" data={testData.others.articleMini} />
       </GridItem>
-      <GridItem halfOnY>
+      <GridItem>
         <List items={testData.others.list} />
       </GridItem>
     </StyledMain>
