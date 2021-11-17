@@ -23,9 +23,9 @@ function ListItem({ item }) {
 function List({ items }) {
   return (
     <RowItem column justify="flex-start">
-      {items.map((item) => (
-        <ListItem item={item} />
-      ))}
+      {/* {items.map((item) => (
+        <ListItem item={item} key={item.id}/>
+      ))} */}
     </RowItem>
   );
 }

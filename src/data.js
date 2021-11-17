@@ -70,8 +70,8 @@ const testData = {
       ...brands.React
     },
     list: [
-      { link: { ...brands.StyledComponents }},
-      { link: { ...brands.CreateReactApp }},
+      { link: { ...brands.StyledComponents }, id:"asdbfyuab32"},
+      { link: { ...brands.CreateReactApp }, id:"ioj78ginoi"},
       // { list: [] },
     ]
 
@@ -88,8 +88,8 @@ const testData = {
       ...brands.Node
     },
     list: [
-      { link: { ...brands.StyledComponents }},
-      { link: { ...brands.CreateReactApp }},
+      { link: { ...brands.StyledComponents }, id:"asdbfyuab32"},
+      { link: { ...brands.CreateReactApp }, id:"ioj78ginoi"},
     ]
   }
 };

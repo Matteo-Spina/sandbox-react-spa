@@ -7,14 +7,24 @@ import { Tile } from "./Items";
 const StyledListItem = styled(Tile)`
   /* not flexible on main axis - take up all space in cross axis */
   width: ${(props) => (props.square ? "150px" : "100%")};
-  height: ${(props) => (props.square ? "150px" : "calc((20ch - 1rem) / 2 - 1rem)")};
+  height: ${(props) =>
+    props.square ? "150px" : "calc((20ch - 1rem) / 2 - 1rem)"};
   margin-bottom: ${(props) => (props.square ? "0" : "1rem")};
+  /* as flex container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 function ListItem({ item, square }) {
-  let colors = item.link.colors
+  let colors = item.link.colors;
   return (
-    <StyledListItem square={square} colorA={colors.base} colorB={colors.lighter || colors.darker}>
+    <StyledListItem
+      square={square}
+      colorA={colors.base}
+      colorB={colors.lighter || colors.darker}
+    >
+      <img src="./abc" alt="abc" />
       <span> {item.link.name} </span>
     </StyledListItem>
   );
@@ -40,7 +50,7 @@ function List({ items, horizontal, squareItems }) {
   return (
     <StyledList horizontal={horizontal || false}>
       {items.map((item) => (
-        <ListItem item={item} square={squareItems || false} />
+        <ListItem item={item} square={squareItems || false} key={item.id} />
       ))}
     </StyledList>
   );

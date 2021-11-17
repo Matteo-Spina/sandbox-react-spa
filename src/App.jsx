@@ -67,6 +67,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     /* theme */
     font-family: "RubikLight", Verdana, sans-serif;
+    line-height: normal;
     background: var(--color-body);
   }
 `;

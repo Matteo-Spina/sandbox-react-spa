@@ -3,7 +3,9 @@ import { Tile } from "./Items";
 
 const StyledArticle = styled(Tile)`
   width: 100%;
+  /* working here */
   height: 100%;
+  /* --- */
   padding: 1rem;
   /* as flex container */
   display: flex;
@@ -63,7 +65,7 @@ function ArticleBlock({ data, ...rest }) {
         <p>{subtitle || "--"}</p>
       </StyledArticleHeader>
       <StyledArticleMain>
-        <p>{content || "--"}</p>
+        <p><span>{content || "--"}</span></p>
         {/* <img> */}
       </StyledArticleMain>
       <StyledArticleFooter>
