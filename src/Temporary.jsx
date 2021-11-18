@@ -1,6 +1,17 @@
 import styled from "styled-components/macro";
 import { Tile } from "./Items";
 
+const StyledLogo = styled.img`
+  /*  specified size which does match natural aspect ratio */
+  width: calc(20 * 4px);
+  height: calc(20 * 4px);
+  object-fit: contain;
+  object-position: center center;
+  vertical-align: middle;
+  border: solid
+  ${'' /* background-color: ; */}
+`
+
 /* 
   list items are divs with a tile-looking
 */
@@ -10,10 +21,6 @@ const StyledListItem = styled(Tile)`
   height: ${(props) =>
     props.square ? "150px" : "calc((20ch - 1rem) / 2 - 1rem)"};
   margin-bottom: ${(props) => (props.square ? "0" : "1rem")};
-  /* as flex container */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 function ListItem({ item, square }) {
@@ -24,7 +31,9 @@ function ListItem({ item, square }) {
       colorA={colors.base}
       colorB={colors.lighter || colors.darker}
     >
-      <img src="./abc" alt="abc" />
+      {/* <div style={{ width: "120px", height: "120px", borderRadius: "50%", background: "white" }}> */}
+        <StyledLogo src={item.link.logos.main} alt="abc" />
+      {/* </div> */}
       <span> {item.link.name} </span>
     </StyledListItem>
   );

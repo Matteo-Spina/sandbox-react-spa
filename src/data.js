@@ -1,80 +1,94 @@
-// keys TODO
-// "node", "react", ...
+import reactLogoPng from "./assets/logoreact-180x180.png";
+import craLogoSvg from "./assets/logo-cra.svg";
+import scLogoPng from "./assets/sc-256x256.png";
+import nodeLogoPng from "./assets/node-180px.png";
 
+// define keys and aliases TODO
+// "node", "react", ...
 // define colors interface
 // {base: <color>, lighter? : <color> , darker?: <color>}
-// TODO move to array
-// const colors = [Node: {...}, React: {...}]
-const colorsNode = { base: "#339933", lighter: "#66cc33" };
-const colorsReact = { base: "#61dafb", darker: "#282c34" };
-const colorsCra = { base: "#09d3ac", darker: "#303846" };
-const colorsSC = { base: "palevioletred" };
+const colors = {
+  react: { base: "#61dafb", darker: "#282c34" },
+  cra: { base: "#09d3ac", darker: "#303846" },
+  sc: { base: "palevioletred" },
+  node: { base: "#339933", lighter: "#66cc33" },
+};
 
 // import logos
-// ...
+const logos = {
+  react: {
+    main: reactLogoPng,
+  },
+  cra: {
+    main: craLogoSvg,
+  },
+  sc: {
+    main: scLogoPng,
+  },
+  node: {
+    main: nodeLogoPng,
+  },
+};
 
 // brand interface
 // ...
 // brands
 const brands = {
-  "Node": {
-    name: "Node",
+  react: {
+    name: "React",
     colors: {
-      ...colorsNode
+      ...colors.react,
     },
     logos: {
-
-    }
+      ...logos.react,
+    },
   },
-  "StyledComponents": {
+
+  cra: {
+    name: "Create React App",
+    colors: {
+      ...colors.cra,
+    },
+    logos: {
+      ...logos.cra,
+    },
+  },
+  sc: {
     name: "Styled-Components",
     colors: {
-      ...colorsSC
+      ...colors.sc,
     },
     logos: {
-
-    }
+      ...logos.sc,
+    },
   },
-  "CreateReactApp": {
-    name: "Create React App",
-
+  node: {
+    name: "Node",
     colors: {
-      ...colorsCra
+      ...colors.node,
     },
     logos: {
-
-    }
+      ...logos.node,
+    },
   },
-  "React": {
-    name: "React",
-
-    colors: {
-      ...colorsReact
-    },
-    logos: {
-
-    }
-  }
-}
+};
 
 // custum strucuture compiled with generic data, made for this web app
 // rigid structure: who read have to know how to deal with before start - contrast to generic, which enables dynamic reading with no previous knowledge
 const testData = {
   top: {
     article: {
-      title: brands.React.name,
+      title: brands.react.name,
       subtitle: "font end",
       content: "working on it",
       dateTime: new Date("1995-12-17T03:24:00"),
-      // colors: { ...brands.React.colors },
-      ...brands.React
+      ...brands.react,
     },
     list: [
-      { link: { ...brands.StyledComponents }, id:"asdbfyuab32"},
-      { link: { ...brands.CreateReactApp }, id:"ioj78ginoi"},
+      { link: { ...brands.sc }, id: "asdbfyuab32" },
+      { link: { ...brands.cra }, id: "ioj78ginoi" },
       // { list: [] },
-    ]
-
+    ],
   },
   base: {},
   tools: {},
@@ -84,14 +98,13 @@ const testData = {
       subtitle: "native app",
       content: "working on it",
       dateTime: new Date("1995-12-17T03:24:00"),
-      // colors: { ...brands.Node.colors }
-      ...brands.Node
+      ...brands.node,
     },
     list: [
-      { link: { ...brands.StyledComponents }, id:"asdbfyuab32"},
-      { link: { ...brands.CreateReactApp }, id:"ioj78ginoi"},
-    ]
-  }
+      { link: { ...brands.sc }, id: "asdbfyuab32" },
+      { link: { ...brands.cra }, id: "ioj78ginoi" },
+    ],
+  },
 };
 
 export default testData;
