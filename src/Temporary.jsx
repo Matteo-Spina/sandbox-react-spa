@@ -8,8 +8,8 @@ const StyledLogo = styled.img`
   object-fit: contain;
   object-position: center center;
   vertical-align: middle;
-  border: solid
-  ${'' /* background-color: ; */}
+  border: solid;
+  background-color: white;
 `
 
 /* 
