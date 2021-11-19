@@ -1,5 +1,6 @@
 import { Header, Footer, Main } from "./Sections";
 import styled, { StyleSheetManager, createGlobalStyle } from "styled-components";
+import StyledScaleGrid from "./Scale";
 
 const GlobalStyle = createGlobalStyle`
   /* use like index.css */
@@ -78,6 +79,8 @@ const StyledApp = styled.div`
   display: grid;
   grid-template-columns: 1fr min(80ch, 100%) 1fr;
   grid-template-rows: [header-start] 10vh [main-start] 1fr [footer-start] 10vh;
+  /* debug */
+  position: relative;
 `
 
 function App() {
@@ -86,7 +89,8 @@ function App() {
       <>
         <GlobalStyle />
         <StyledApp>
-          {/* <!-- grid --> */}
+          {/* <!-- debug grid --> */}
+          <StyledScaleGrid />
           <Header />
           <Main />
           <Footer />
