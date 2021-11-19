@@ -3,13 +3,13 @@ import { Tile } from "./Items";
 
 const StyledLogo = styled.img`
   /*  specified size which does match natural aspect ratio */
-  width: calc(20 * 4px);
-  height: calc(20 * 4px);
+  width: 6em;
+  height: 6em;
   object-fit: contain;
   object-position: center center;
   vertical-align: middle;
-  border: solid;
-  background-color: white;
+  ${'' /* border: solid; */}
+  background-color: #ffffffbb;
 `
 
 /* 
@@ -17,9 +17,8 @@ const StyledLogo = styled.img`
 */
 const StyledListItem = styled(Tile)`
   /* not flexible on main axis - take up all space in cross axis */
-  width: ${(props) => (props.square ? "150px" : "100%")};
-  height: ${(props) =>
-    props.square ? "150px" : "calc((20ch - 1rem) / 2 - 1rem)"};
+  width: ${(props) => (props.square ? "6em" : "100%")};
+  height: 6em;
   margin-bottom: ${(props) => (props.square ? "0" : "1rem")};
 `;
 
@@ -52,7 +51,7 @@ const StyledList = styled.div`
   align-items: center;
   /* take up all parent space */
   width: 100%;
-  height: 100%;
+  ${'' /* height: 100%; */}
 `;
 
 function List({ items, horizontal, squareItems }) {

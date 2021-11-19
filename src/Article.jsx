@@ -3,9 +3,7 @@ import { Tile } from "./Items";
 
 const StyledArticle = styled(Tile)`
   width: 100%;
-  /* working here */
-  height: 100%;
-  /* --- */
+  height: 12rem;
   padding: 1rem;
   /* as flex container */
   display: flex;
@@ -18,7 +16,7 @@ const StyledArticle = styled(Tile)`
   /* children */
   & > * {
     width: 100%;
-    padding: 8px;
+    padding: 1em;
     /* as flex child */
     flex: 1 0;
     /* decoration */
@@ -27,13 +25,11 @@ const StyledArticle = styled(Tile)`
 `;
 
 const StyledArticleHeader = styled.header`
-  /* size constraint, override flex */
-  max-height: 20%;
   /* fonts - adjust font-size relative to component */
   font-size: 1em;
   text-align: start;
   /* debug */
-  /* background: forestgreen; */
+  ${'' /* background: forestgreen; */}
 `;
 
 const StyledArticleMain = styled.section`
@@ -46,10 +42,8 @@ const StyledArticleMain = styled.section`
 `;
 
 const StyledArticleFooter = styled.footer`
-  /* size constraint */
-  max-height: 20%;
   /* fonts - adjust font-size relative to component */
-  font-size: 0.75em;
+  font-size: 1em;
   text-align: center;
 
   /* debug */
@@ -59,26 +53,34 @@ const StyledArticleFooter = styled.footer`
 function ArticleBlock({ data, ...rest }) {
   const { title, subtitle, content, dateTime, colors } = data;
   return (
-    <StyledArticle colorA={colors.base} colorB={colors.lighter || colors.darker}>
+    <StyledArticle
+      colorA={colors.base}
+      colorB={colors.lighter || colors.darker}
+    >
       <StyledArticleHeader>
-        <h3>{title || "--"}</h3>
-        <p>{subtitle || "--"}</p>
+        {/* <h3>{title || "--"}</h3> */}
+        {/* <p>{subtitle || "--"}</p> */}
       </StyledArticleHeader>
       <StyledArticleMain>
-        <p><span>{content || "--"}</span></p>
+        <p>
+          <span>{content || "--"}</span>
+        </p>
         {/* <img> */}
       </StyledArticleMain>
       <StyledArticleFooter>
-        <p>{dateTime.toString() || "--"}</p>
+        {/* <p>{dateTime.toString() || "--"}</p> */}
       </StyledArticleFooter>
     </StyledArticle>
   );
 }
 
-function ArticleBlockMini({data, ...rest}) {
+function ArticleBlockMini({ data, ...rest }) {
   const { title, subtitle, dateTime, colors } = data;
   return (
-    <StyledArticle colorA={colors.base} colorB={colors.lighter || colors.darker}>
+    <StyledArticle
+      colorA={colors.base}
+      colorB={colors.lighter || colors.darker}
+    >
       <StyledArticleHeader>
         <h3>{title || "--"}</h3>
         <p>{subtitle || "--"}</p>
@@ -90,8 +92,36 @@ function ArticleBlockMini({data, ...rest}) {
   );
 }
 
-function Article({type, ...rest}) {
-  return (type === "mini" ? <ArticleBlockMini {...rest} /> : <ArticleBlock {...rest} />)
+const TextRun = styled.span``;
+
+const StyledTestArticle = styled.div`
+  min-height: 12em;
+  background: white;
+  border-radius: 12px /13px;
+`;
+
+function TestArticle() {
+  return (
+    <StyledTestArticle>
+      <p>
+        <TextRun>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+          delectus ut quo necessitatibus cupiditate nesciunt quae omnis sapiente
+          sed eum non hic consectetur aliquam magnam, libero soluta quas nemo
+          odio?
+        </TextRun>
+      </p>
+    </StyledTestArticle>
+  );
+}
+
+function Article({ type, test, ...rest }) {
+  if (test) return <TestArticle />;
+  return type === "mini" ? (
+    <ArticleBlockMini {...rest} />
+  ) : (
+    <ArticleBlock {...rest} />
+  );
 }
 export default Article;
 

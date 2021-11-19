@@ -8,7 +8,8 @@ import styled from "styled-components/macro";
 const StyledGridItem = styled.div`
   grid-row: span 1;
   grid-column: ${(props) => (props.fullOnX ? "1 / -1" : "span 1")};
-  padding: 1rem;
+
+  ${'' /* padding: 1rem; */}
 `;
 
 /* 

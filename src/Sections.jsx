@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   justify-content: flex-end;
   align-items: center;
   /* debug */
-  /* background-color: lightpink; */
+  background-color: whitesmoke;
 `;
 // function Header() { return <StyledHeader /> }
 
@@ -27,7 +27,7 @@ const StyledFooter = styled.footer`
   justify-content: flex-end;
   align-items: center;
   /* debug */
-  /* background-color: lightpink; */
+  background-color: whitesmoke;
 `;
 // function Footer() { }
 
@@ -37,11 +37,13 @@ const StyledMain = styled.main`
   grid-column: 2 / -2;
   /* as grid container */
   display: grid;
-  /* -- grid container is flexible but columns are not by themselves ...*/
-  grid-template-columns: repeat(auto-fit, 40ch);
+  /* -- grid container is flexible but its columns are not ...*/
+  grid-template-columns: repeat(auto-fill, 40ch);
   /* ... so it is important to center grid inside its container --*/
   justify-content: center;
   grid-auto-rows: max-content;
+  ${'' /* column-gap: 1rem; */}
+  row-gap: 2rem;
   /* debug */
   /* background-color: lightgoldenrodyellow; */
 `;
@@ -51,7 +53,7 @@ function MainSection() {
     <StyledMain>
       {/* top spot */}
       <GridItem>
-        <Article data={testData.top.article} />
+        <Article data={testData.top.article} test/>
       </GridItem>
       <GridItem>
         <List items={testData.top.list} />
