@@ -29,7 +29,7 @@ const StyledArticleHeader = styled.header`
   font-size: 1em;
   text-align: start;
   /* debug */
-  ${'' /* background: forestgreen; */}
+  ${"" /* background: forestgreen; */}
 `;
 
 const StyledArticleMain = styled.section`

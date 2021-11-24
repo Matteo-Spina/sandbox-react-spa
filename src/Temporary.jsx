@@ -2,15 +2,18 @@ import styled from "styled-components/macro";
 import { Tile } from "./Items";
 
 const StyledLogo = styled.img`
-  /*  specified size which does match natural aspect ratio */
-  width: 6em;
-  height: 6em;
+  /*  png has natural aspect ratio */
+  height: 3em;
+  /* 
+    nb: let parent height be (n)em, considering that 
+    percentage refers to parent's content box so (n)em > 100% / (n) 
+  */
   object-fit: contain;
   object-position: center center;
   vertical-align: middle;
-  ${'' /* border: solid; */}
   background-color: #ffffffbb;
-`
+  border-radius: inherit;
+`;
 
 /* 
   list items are divs with a tile-looking
@@ -18,8 +21,11 @@ const StyledLogo = styled.img`
 const StyledListItem = styled(Tile)`
   /* not flexible on main axis - take up all space in cross axis */
   width: ${(props) => (props.square ? "6em" : "100%")};
-  height: 6em;
+  height: 5em;
   margin-bottom: ${(props) => (props.square ? "0" : "1rem")};
+  /* as flex-container */
+  display: flex;
+  align-items: center;
 `;
 
 function ListItem({ item, square }) {
@@ -30,10 +36,26 @@ function ListItem({ item, square }) {
       colorA={colors.base}
       colorB={colors.lighter || colors.darker}
     >
-      {/* <div style={{ width: "120px", height: "120px", borderRadius: "50%", background: "white" }}> */}
+      <div
+        style={{
+          flex: "1 0",
+          height: "max-content",
+          borderRadius: "inherit",
+          textAlign: "center",
+        }}
+      >
         <StyledLogo src={item.link.logos.main} alt="abc" />
-      {/* </div> */}
-      <span> {item.link.name} </span>
+      </div>
+      <div
+        style={{
+          flex: "3 1",
+          height: "max-content",
+          borderRadius: "inherit",
+          textAlign: "center",
+        }}
+      >
+        <span> {item.link.name} </span>
+      </div>
     </StyledListItem>
   );
 }
@@ -51,14 +73,14 @@ const StyledList = styled.div`
   align-items: center;
   /* take up all parent space */
   width: 100%;
-  ${'' /* height: 100%; */}
+  /* height: 100%; */
 `;
 
-function List({ items, horizontal, squareItems }) {
+function List({ items, horizontal }) {
   return (
-    <StyledList horizontal={horizontal || false}>
+    <StyledList horizontal={horizontal}>
       {items.map((item) => (
-        <ListItem item={item} square={squareItems || false} key={item.id} />
+        <ListItem item={item} square={horizontal} key={item.id} />
       ))}
     </StyledList>
   );

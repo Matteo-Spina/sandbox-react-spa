@@ -70,7 +70,7 @@ function MainSection() {
       </GridItem>
       {/* tools */}
       <GridItem fullOnX>
-        <List horizontal squareItems items={testData.others.list} />
+        <List horizontal items={testData.others.list} />
       </GridItem>
       {/* others */}
       <GridItem>
