@@ -46,16 +46,19 @@ function ListItem({ item, square }) {
       >
         <StyledLogo src={item.link.logos.main} alt="abc" />
       </div>
-      <div
-        style={{
-          flex: "3 1",
-          height: "max-content",
-          borderRadius: "inherit",
-          textAlign: "center",
-        }}
-      >
-        <span> {item.link.name} </span>
-      </div>
+      {/* with square option, prevent from rendering text */}
+      {!square && (
+        <div
+          style={{
+            flex: "3 1",
+            height: "max-content",
+            borderRadius: "inherit",
+            textAlign: "center",
+          }}
+        >
+          <span> {item.link.name} </span>
+        </div>
+      )}
     </StyledListItem>
   );
 }
