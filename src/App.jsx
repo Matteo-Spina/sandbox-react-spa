@@ -14,11 +14,11 @@ const GlobalStyle = createGlobalStyle`
       local(Rubik-Light);
   }
   
-  html {
+  :root {
     /* fonts */
-    --font-large: 16px;
+    /* --font-large: 16px;
     --font-medium: 16px;
-    --font-small: 16px;
+    --font-small: 16px; */
     --line-height-custom: 2;
     /* colors */
     --color-body: orange;
@@ -45,18 +45,18 @@ const GlobalStyle = createGlobalStyle`
     --card-border-radius: 8px;
       
     box-sizing: border-box;
-    font-size: var(--font-large);
+    /* font-size: 100%;  */
   }
 
   @media (max-width: 900px) {
     html {
-      font-size: var(--font-medium);
+      /* font-size: var(--font-medium); */
     }
   }
   
   @media (max-width: 400px) {
     html {
-      font-size: var(--font-small);
+      /* font-size: var(--font-small); */
     }
   }
 
