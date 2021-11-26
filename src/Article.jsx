@@ -16,7 +16,7 @@ const StyledArticleFooter = styled.footer`
   /* background: firebrick; */
 `;
 
-function ArticleBlock({ data, type, ...rest }) {
+function ArticleBlock({ data, type }) {
   const { title, subtitle, content, dateTime, colors } = data;
   return (
     <StyledArticle
@@ -24,11 +24,12 @@ function ArticleBlock({ data, type, ...rest }) {
       colorA={colors.base}
       colorB={colors.lighter || colors.darker}
     >
-      <h3>{title || "X y H b j"}</h3>
+      <h1>{title || "X y H b j"}</h1>
+      <h2>{title || "X y H b j"}</h2>
       {type === "mini" ? false : <p>{content || "X y H b"}</p>}
       {/* <img> */}
       <StyledArticleFooter>
-        {/* <p>{dateTime.toString() || "--"}</p> */}
+        <p>{dateTime.toString() || "--"}</p>
       </StyledArticleFooter>
     </StyledArticle>
   );
