@@ -50,22 +50,11 @@ const GlobalStyle = createGlobalStyle`
     --card-border-radius: 8px;
 
     box-sizing: border-box;
-    /* font-size: 100%;  */
   }
 
-  @media (max-width: 900px) {
-    html {
-      /* font-size: var(--font-medium); */
-    }
-  }
-
-  @media (max-width: 400px) {
-    html {
-      /* font-size: var(--font-small); */
-    }
-  }
-
-  * {
+  *,
+  *::before,
+  *::after {
     box-sizing: inherit;
     margin: 0;
   }
@@ -84,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
         NOTA: font-size * line-height >= font-size * R
           ==> line-height >= R (= 1.185)
     */
-    --default-line-height: 2;
+    --default-line-height: 2rem; /* note rem */
     font-family: "RubikLight", Verdana, sans-serif;
     font-weight: 400;
     line-height: var(--default-line-height);
@@ -115,29 +104,24 @@ const GlobalStyle = createGlobalStyle`
     
   */
   h1 {
-    /* n=6 */
-    font-size: 1.802rem;
+    font-size: 1.802rem; /* n = 6 */
   }
 
   h2 {
-    /*  */
-    font-size: 1.602rem;
+    font-size: 1.602rem; /* n = 5 */
+    
   }
 
   h3 {
-    /*  */
-    font-size: 1.424rem;
+    font-size: 1.424rem; /* n = 4 */
   }
 
   h4 {
-    /* n=2 */
-    font-size: 1.266rem;
+    font-size: 1.266rem; /* n = 2 */
   }
 
   h5 {
-    /* n=1 */
-    font-size: 1.125rem;
-    /* k= */
+    font-size: 1.125rem; /* n = 1 */
   }
 
   small,

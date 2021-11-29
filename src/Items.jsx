@@ -26,7 +26,7 @@ const StyledTile = styled.div`
     0px 2px 8px 0px var(--color-shadow-2);
   /* border radius are fixed */
   border-radius: 12px / 13px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 `;
 
 export { StyledGridItem as GridItem, StyledTile as Tile };
