@@ -8,7 +8,7 @@ import nodeLogoPng from "./assets/node-180px.png";
 // define colors interface
 // {base: <color>, lighter? : <color> , darker?: <color>}
 const colors = {
-  react: { base: "#61dafb", darker: "#282c34" },
+  react: { base: "#61dafb", darker: "#282c34", bg:"#222222" },
   cra: { base: "#09d3ac", darker: "#303846" },
   sc: { base: "palevioletred" },
   node: { base: "#339933", lighter: "#66cc33" },
@@ -80,7 +80,7 @@ const testData = {
     article: {
       title: brands.react.name,
       subtitle: "font end",
-      content: "working on it",
+      content: "working on it and something else",
       dateTime: new Date("1995-12-17T03:24:00"),
       ...brands.react,
     },

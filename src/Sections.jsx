@@ -53,7 +53,7 @@ function MainSection() {
     <StyledMain>
       {/* top spot */}
       <GridItem>
-        <Article data={testData.top.article} />
+        <Article data={testData.top.article} square />
       </GridItem>
       <GridItem>
         <List items={testData.top.list} />

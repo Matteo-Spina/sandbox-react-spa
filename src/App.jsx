@@ -147,7 +147,7 @@ function App() {
         <GlobalStyle />
         <StyledApp>
           {/* <!-- debug grid --> */}
-          <StyledScaleGrid />
+          {/* <StyledScaleGrid /> */}
           <Header />
           <Main />
           <Footer />
