@@ -42,7 +42,7 @@ const StyledMain = styled.main`
   /* ... so it is important to center grid inside its container --*/
   justify-content: center;
   grid-auto-rows: max-content;
-  ${'' /* column-gap: 1rem; */}
+  ${"" /* column-gap: 1rem; */}
   row-gap: 2rem;
   /* debug */
   /* background-color: lightgoldenrodyellow; */
@@ -74,7 +74,7 @@ function MainSection() {
       </GridItem>
       {/* others */}
       <GridItem>
-        <Article type="mini" data={testData.others.articleMini} />
+        <Article data={testData.others.articleMini} small />
       </GridItem>
       <GridItem>
         <List items={testData.others.list} />

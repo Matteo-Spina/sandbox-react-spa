@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import { Tile } from "./Items";
+import Image from "./Elements";
 
 const Header = styled.header`
   & > h3 {
@@ -32,22 +33,6 @@ function Heading({ title, subtitle, labels }) {
   );
 }
 
-const ImageContainer = styled.div`
-  height: 10rem;
-  aspect-ratio: 1/1;
-  align-self: center; /* center and not stretch */
-  border-radius: 50%;
-  /* inside */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*  */
-  padding: 1rem; /* fit in 80%=8rem */
-  margin-bottom: 2rem;
-  /*  */
-  background-color: ${(props) => props.bgColor};
-`;
-
 function Content({ content }) {
   return <Paragraph>{content}</Paragraph>;
 }
@@ -72,9 +57,7 @@ function Article({ data, small, square }) {
       colorB={colors.lighter || colors.darker}
     >
       <Heading title={title} subtitle={subtitle} />
-      <ImageContainer bgColor={colors.bg}>
-        <img src={logos.main} alt="" style={{ height: "80%" }} />
-      </ImageContainer>
+      <Image src={logos.main} alt="ciao" bgColor={colors.bg} />
       {small ? false : <Content content={content} />}
     </StyledArticle>
   );
