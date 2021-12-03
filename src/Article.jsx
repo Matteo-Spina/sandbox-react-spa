@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 import { Tile } from "./Items";
-import Image from "./Elements";
+// import Image from "./Elements";
+import { Image } from "./Temporary";
 
 const Header = styled.header`
   & > h3 {
@@ -16,6 +17,7 @@ const Header = styled.header`
 `;
 
 const Paragraph = styled.p`
+  max-width: 80ch;
   /* line clamping snippet */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -57,7 +59,7 @@ function Article({ data, small, square }) {
       colorB={colors.lighter || colors.darker}
     >
       <Heading title={title} subtitle={subtitle} />
-      <Image src={logos.main} alt="ciao" bgColor={colors.bg} />
+      <Image src={logos.main} alt="" bgColor={colors.bg} />
       {small ? false : <Content content={content} />}
     </StyledArticle>
   );

@@ -62,12 +62,12 @@ function MainSection() {
       <GridItem fullOnX>
         <Article data={testData.top.article}></Article>
       </GridItem>
-      <GridItem fullOnX>
+      {/* <GridItem fullOnX>
         <Article data={testData.top.article}></Article>
       </GridItem>
       <GridItem fullOnX>
         <Article data={testData.top.article}></Article>
-      </GridItem>
+      </GridItem> */}
       {/* tools */}
       <GridItem fullOnX>
         <List horizontal items={testData.others.list} />
