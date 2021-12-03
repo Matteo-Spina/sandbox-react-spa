@@ -1,6 +1,5 @@
 import styled, {css} from "styled-components/macro";
 import { Tile } from "./Items";
-// import Image from "./Elements";
 import {Stack, Image} from "./Elements";
 
 
@@ -66,6 +65,6 @@ function List({ horizontal, items }) {
   );
 }
 
-export { List as default, StyledListItem, Image };
+export default List;
 
 // horizontal - vertical
