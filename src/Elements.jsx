@@ -32,12 +32,12 @@ function Image({ src, alt, ...rest }) {
 
 // Logical positioning
 const StyledStack = styled.div`
-/* take up 100% of containing parent */
+  /* take up 100% of containing parent */
   width: 100%;
   display: flex;
   flex-direction: ${(props) => (props.horizontal ? "row" : "column")};
   align-items: center;
-	
+
   &&& > * {
     flex: 0 0 auto;
     /* space between items */
@@ -45,4 +45,4 @@ const StyledStack = styled.div`
   }
 `;
 
-export {StyledStack as Stack, Image};
+export { StyledStack as Stack, Image };

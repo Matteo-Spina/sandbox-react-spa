@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import { GridItem } from "./Items";
 import Article from "./Article";
-import List from "./Temporary";
+import List from "./List";
 import testData from "./data.js";
 // import OrbitSystem from "./OrbitSystem";
 
