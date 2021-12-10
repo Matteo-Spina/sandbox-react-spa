@@ -3,6 +3,7 @@ import { GridItem } from "./Items";
 import Article from "./Article";
 import List from "./List";
 import testData from "./data.js";
+import Display from "./Display";
 // import OrbitSystem from "./OrbitSystem";
 
 const StyledHeader = styled.header`
@@ -43,7 +44,7 @@ const StyledMain = styled.main`
   justify-content: center;
   grid-auto-rows: max-content;
   ${"" /* column-gap: 1rem; */}
-  row-gap: 2rem;
+  row-gap: 3rem;
   /* debug */
   /* background-color: lightgoldenrodyellow; */
 `;
@@ -60,14 +61,8 @@ function MainSection() {
       </GridItem>
       {/* base */}
       <GridItem fullOnX>
-        <Article data={testData.top.article}></Article>
+        <Display data={testData.base}/>
       </GridItem>
-      {/* <GridItem fullOnX>
-        <Article data={testData.top.article}></Article>
-      </GridItem>
-      <GridItem fullOnX>
-        <Article data={testData.top.article}></Article>
-      </GridItem> */}
       {/* tools */}
       <GridItem fullOnX>
         <List horizontal items={testData.others.list} />

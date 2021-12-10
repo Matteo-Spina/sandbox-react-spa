@@ -41,7 +41,7 @@ const StyledStack = styled.div`
   &&& > * {
     flex: 0 0 auto;
     /* space between items */
-    ${(props) => (props.horizontal ? "margin-right" : "margin-bottom")}: 1rem;
+    ${(props) => (props.horizontal ? "margin-right: 2rem;" : "margin-bottom: 1rem;")}
   }
 `;
 

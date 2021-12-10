@@ -33,6 +33,7 @@ function ListItem({ item, square }) {
       colorA={colors.base}
       colorB={colors.lighter || colors.darker}
     >
+      {/* to do remove hard wiring */}
       <Image src={item.link.logos.main} alt="" bgColor="#fff" size={0.3} />
       {/* with square option, prevent from rendering text */}
       {square ? (
@@ -59,7 +60,7 @@ function List({ horizontal, items }) {
   return (
     <Stack horizontal={horizontal}>
       {items.map((item) => (
-        <ListItem item={item} square={horizontal} key={item.id} />
+        <ListItem square={horizontal} item={item}  key={item.id} />
       ))}
     </Stack>
   );

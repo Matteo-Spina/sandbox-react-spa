@@ -5,13 +5,30 @@ import nodeLogoPng from "./assets/node-180px.png";
 
 // define keys and aliases TODO
 // "node", "react", ...
+const keys = [
+  "react",
+  "cra",
+  "sc",
+  "node",
+  "vercel",
+  "electron",
+  "js",
+  "html",
+  "css",
+];
 // define colors interface
 // {base: <color>, lighter? : <color> , darker?: <color>}
+// {base: <color>, bg: <color> , reversible: <boolean>}
 const colors = {
-  react: { base: "#61dafb", darker: "#282c34", bg:"#222222" },
+  react: { base: "#61dafb", darker: "#282c34", bg: "#222222" },
   cra: { base: "#09d3ac", darker: "#303846" },
   sc: { base: "palevioletred" },
   node: { base: "#339933", lighter: "#66cc33" },
+  vercel: { base: "black", bg: "white" },
+  electron: { base: "black", bg: "white" },
+  js: { base: "black", bg: "#f7e018" },
+  html: { base: "orange", bg: "white" },
+  css: { base: "deepskyblue", bg: "white" },
 };
 
 // import logos
@@ -27,6 +44,18 @@ const logos = {
   },
   node: {
     main: nodeLogoPng,
+  },
+  vercel: {
+    main: "",
+  },
+  html: {
+    main: "",
+  },
+  css: {
+    main: "",
+  },
+  js: {
+    main: "",
   },
 };
 
@@ -71,12 +100,50 @@ const brands = {
       ...logos.node,
     },
   },
+  vercel: {
+    name: "Vercel",
+    colors: {
+      ...colors.vercel,
+    },
+    logos: {
+      ...logos.vercel,
+    },
+  },
+  html: {
+    name: "Html",
+    colors: {
+      ...colors.html,
+    },
+    logos: {
+      // ...
+    },
+  },
+  css: {
+    name: "Css",
+    colors: {
+      ...colors.css,
+    },
+    logos: {
+      // ...
+    },
+  },
+  js: {
+    name: "Javascript",
+    colors: {
+      ...colors.js,
+    },
+    logos: {
+      // ...
+    },
+  },
 };
 
-// custum strucuture compiled with generic data, made for this web app
-// rigid structure: who read have to know how to deal with before start - contrast to generic, which enables dynamic reading with no previous knowledge
+// hardcoded data sample
+// model <-> UI
+// note: https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy
 const testData = {
   top: {
+    // emphasis
     article: {
       title: brands.react.name,
       subtitle: "font end",
@@ -87,12 +154,36 @@ const testData = {
     list: [
       { link: { ...brands.sc }, id: "asdbfyuab32" },
       { link: { ...brands.cra }, id: "ioj78ginoi" },
+      { link: { ...brands.vercel }, id: "jkbknuinuoi" },
       // { list: [] },
     ],
   },
-  base: {},
-  tools: {},
+  base: {
+    // about what i do
+    subject: "Front End Developer",
+    statements: ["translating specs into code", "link front end to backend"],
+    details: [
+      { link: { ...brands.html }, statements: "" },
+      { link: { ...brands.css }, statements: "" },
+      { link: { ...brands.js }, statements: "" },
+    ],
+  },
+  resources: {
+    bookmarks: [
+      {
+        title: "...",
+        url: "",
+      },
+    ],
+    profiles: [
+      {
+        site: "GitHub",
+        url: "http:....",
+      },
+    ],
+  },
   others: {
+    // ...
     articleMini: {
       title: "Node",
       subtitle: "native app",
