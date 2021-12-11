@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import { GridItem } from "./Items";
 import Article from "./Article";
-import List from "./List";
+import { List } from "./List";
 import testData from "./data.js";
 import Display from "./Display";
 // import OrbitSystem from "./OrbitSystem";
@@ -61,7 +61,7 @@ function MainSection() {
       </GridItem>
       {/* base */}
       <GridItem fullOnX>
-        <Display data={testData.base}/>
+        <Display content={testData.base} />
       </GridItem>
       {/* tools */}
       <GridItem fullOnX>

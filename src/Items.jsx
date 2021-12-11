@@ -21,7 +21,7 @@ const StyledTile = styled.div`
     ${(props) => props.colorA} 0%,
     ${(props) => props.colorB} 150%); 
   */
-  background: ${(props) => props.colorA};
+  background: ${(props) => props.isHighLighted ? "magenta" : props.colorA};
   box-shadow: 0px 2px 2px 0px var(--color-shadow-1),
     0px 2px 8px 0px var(--color-shadow-2);
   /* border radius are fixed */

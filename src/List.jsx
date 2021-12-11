@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components/macro";
+
 import { Tile } from "./Items";
 import { Stack, Image } from "./Elements";
 
@@ -25,13 +26,14 @@ const StyledListItem = styled(Tile)`
 `;
 
 // ListItems can be square with no text, eg when inside a horizontal Stack
-function ListItem({ item, square }) {
+function ListItem({ item, square, onClick, isHighLighted }) {
   let colors = item.link.colors;
   return (
     <StyledListItem
+      onClick={onClick}
       square={square}
       colorA={colors.base}
-      colorB={colors.lighter || colors.darker}
+      isHighLighted={isHighLighted}
     >
       {/* to do remove hard wiring */}
       <Image src={item.link.logos.main} alt="" bgColor="#fff" size={0.3} />
@@ -54,16 +56,16 @@ function ListItem({ item, square }) {
 }
 
 /* 
-  List is a Stack of ListItems
+  List is a Stack and it is stateless
 */
 function List({ horizontal, items }) {
   return (
     <Stack horizontal={horizontal}>
       {items.map((item) => (
-        <ListItem square={horizontal} item={item}  key={item.id} />
+        <ListItem key={item.id} item={item} square={horizontal} />
       ))}
     </Stack>
   );
 }
 
-export default List;
+export { ListItem, List };

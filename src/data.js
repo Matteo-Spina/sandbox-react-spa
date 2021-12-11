@@ -163,9 +163,9 @@ const testData = {
     subject: "Front End Developer",
     statements: ["translating specs into code", "link front end to backend"],
     details: [
-      { link: { ...brands.html }, statements: "" },
-      { link: { ...brands.css }, statements: "" },
-      { link: { ...brands.js }, statements: "" },
+      { link: { ...brands.html }, statement: "html statement", id: "jabsd78" },
+      { link: { ...brands.css }, statement: "css XapTy", id: "6854klj98" },
+      { link: { ...brands.js }, statement: "js AxYj", id: "po87asd" },
     ],
   },
   resources: {

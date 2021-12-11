@@ -1,12 +1,14 @@
+import { useState } from "react";
 import styled from "styled-components/macro";
+import { Stack } from "./Elements";
 import { Tile } from "./Items";
-import List from "./List";
+import { ListItem } from "./List";
 
 const Header = styled.header`
-	width: 100%;
-	padding: 1rem;
-	text-align: center;
-	
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+
   & > h2 {
     font-size: 1.424rem;
     margin-bottom: 1rem;
@@ -42,30 +44,58 @@ function Heading({ subject, statements }) {
 }
 
 const StyledContent = styled(Tile)`
-	width: 100%;
-	padding: 1rem;
+  width: 100%;
+  padding: 1rem;
 `;
+
+// --------------------------------------
+
+// const StyledTab = styled(Tile)``;
+
+function Tabs({ items }) {
+  const [current, setCurrent] = useState({ statement: "test", id: "000000" });
+
+  const handleClick = (id) => {
+    const newCurrent = items.find((item) => item.id === id);
+    setCurrent(newCurrent);
+  };
+
+  return (
+    <StyledContent>
+      <Stack horizontal>
+        {items.map((item) => (
+          <ListItem
+            key={item.id}
+            item={item}
+            onClick={() => handleClick(item.id)}
+            square
+            isHighLighted={current.id === item.id ? true : false}
+          />
+        ))}
+      </Stack>
+      <div>
+        <Paragraph>{current.statement}</Paragraph>
+      </div>
+    </StyledContent>
+  );
+}
+
+// ......................
 
 const StyledDisplay = styled.article`
   width: 100%;
-	display: flex;
+  display: flex;
   flex-direction: column;
   /* justify-content: see height max-content*/
-	align-items: center;
+  align-items: center;
 `;
 
-function Display({ data }) {
-  const { subject, statements, details } = data;
+function Display({ content }) {
+  const { subject, statements, details } = content;
   return (
-    <StyledDisplay >
+    <StyledDisplay>
       <Heading subject={subject} statements={statements} />
-      <StyledContent colorA="white">
-        {/* add state for interactivity */}
-        <List horizontal items={details} />
-        <div>
-					<Paragraph>"...selected detail content goes here..."</Paragraph>
-				</div>
-      </StyledContent>
+      <Tabs items={details} />
     </StyledDisplay>
   );
 }
