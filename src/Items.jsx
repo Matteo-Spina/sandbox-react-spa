@@ -14,6 +14,7 @@ const StyledGridItem = styled.div`
 /* 
   "Tile" - Decorative component: it carries styles for a tile-looking div
   Nota: Tile does not impose any sizes
+  NOta: is it meant to be used directly? may be an abstract feature...
 */
 const StyledTile = styled.div`
   /* 

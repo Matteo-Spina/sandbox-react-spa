@@ -43,9 +43,19 @@ function Heading({ subject, statements }) {
   );
 }
 
-const StyledContent = styled(Tile)`
+const StyledDetails = styled.div`
   width: 100%;
   padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+`;
+
+const TabsTile = styled(Tile)`
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 // --------------------------------------
@@ -61,7 +71,7 @@ function Tabs({ items }) {
   };
 
   return (
-    <StyledContent>
+    <TabsTile colorA="white">
       <Stack horizontal>
         {items.map((item) => (
           <ListItem
@@ -73,10 +83,10 @@ function Tabs({ items }) {
           />
         ))}
       </Stack>
-      <div>
+      <StyledDetails>
         <Paragraph>{current.statement}</Paragraph>
-      </div>
-    </StyledContent>
+      </StyledDetails>
+    </TabsTile>
   );
 }
 
