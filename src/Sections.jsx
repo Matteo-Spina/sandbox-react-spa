@@ -3,7 +3,7 @@ import { GridItem } from "./Items";
 import Article from "./Article";
 import { List } from "./List";
 import testData from "./data.js";
-import Display from "./Display";
+import { Tabs, Statement } from "./Display";
 // import OrbitSystem from "./OrbitSystem";
 
 const StyledHeader = styled.header`
@@ -61,7 +61,10 @@ function MainSection() {
       </GridItem>
       {/* base */}
       <GridItem fullOnX>
-        <Display content={testData.base} />
+        <Statement content={testData.base} />
+      </GridItem>
+      <GridItem fullOnX>
+        <Tabs items={testData.base.details} />
       </GridItem>
       {/* tools */}
       <GridItem fullOnX>

@@ -10,7 +10,6 @@ const Header = styled.header`
   text-align: center;
 
   & > h2 {
-    font-size: 1.424rem;
     margin-bottom: 1rem;
   }
 
@@ -30,7 +29,8 @@ const Paragraph = styled.p`
   overflow: hidden;
 `;
 
-function Heading({ subject, statements }) {
+function Statement({ content }) {
+  const { subject, statements } = content;
   return (
     <Header>
       <h2>{subject || "..."}</h2>
@@ -51,7 +51,7 @@ const StyledDetails = styled.div`
 `;
 
 const TabsTile = styled(Tile)`
-  width: 50%;
+  /* width: 50%; */
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -104,10 +104,10 @@ function Display({ content }) {
   const { subject, statements, details } = content;
   return (
     <StyledDisplay>
-      <Heading subject={subject} statements={statements} />
+      <Statement content={{ subject, statements }} />
       <Tabs items={details} />
     </StyledDisplay>
   );
 }
 
-export default Display;
+export { Tabs, Statement, Display };
