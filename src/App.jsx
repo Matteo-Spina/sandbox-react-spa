@@ -7,12 +7,13 @@ import StyledScaleGrid from "./Scale";
 
 const GlobalStyle = createGlobalStyle`
   /* use like index.css */
-  @font-face {
+  /* @font-face {
     font-family: "RubikLight";
     font-style: normal;
     font-weight: normal;
+    // add unicode-range
     src: local("Rubik Light"), local(Rubik Light), local(Rubik-Light);
-  }
+  } */
 
   :root {
     /* colors */
@@ -74,7 +75,7 @@ const GlobalStyle = createGlobalStyle`
           ==> line-height >= R (= 1.185)
     */
     --default-line-height: 2rem; /* note rem */
-    font-family: "RubikLight", Verdana, sans-serif;
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
     line-height: var(--default-line-height);
     /*  */
