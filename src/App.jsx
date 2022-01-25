@@ -3,7 +3,7 @@ import styled, {
   StyleSheetManager,
   createGlobalStyle,
 } from "styled-components";
-import StyledScaleGrid from "./Scale";
+// import StyledScaleGrid from "./Scale";
 
 const GlobalStyle = createGlobalStyle`
   /* use like index.css */
