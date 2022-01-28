@@ -40,7 +40,8 @@ function Content({ content }) {
 
 const StyledArticle = styled(Tile)`
   width: 100%;
-  aspect-ratio: ${(props) => (props.square ? "8/9" : "auto")}; //Alert 8/9 not k*1rem
+  aspect-ratio: ${(props) =>
+    props.square ? "8/9" : "auto"}; //Alert 8/9 not k*1rem
   /* inside */
   display: flex;
   flex-direction: column;

@@ -161,7 +161,10 @@ const testData = {
   base: {
     // about what i do
     subject: "Front End Development",
-    statements: ["Translating design specs into code", "Linking front end to backend"],
+    statements: [
+      "Translating design specs into code",
+      "Linking front end to backend",
+    ],
     details: [
       { link: { ...brands.html }, statement: "html statement", id: "jabsd78" },
       { link: { ...brands.css }, statement: "css XapTy", id: "6854klj98" },
