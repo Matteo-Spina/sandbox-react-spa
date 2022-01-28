@@ -75,8 +75,9 @@ ESlint has a rule that warns you if you are using `CRLF`.
 
 VSCode supports either `LF` and `CRLF`. I told VSC to use the former for all files:
 
-```json
-// `.vscode\settings.json`
+```jsonc
+// .vscode\settings.json
+
 "files.eol" = "\n"
 ```
 
