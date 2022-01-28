@@ -1,4 +1,5 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // files.eol is more a suggestion: vsc decision base on counting nl type
   "files.eol": "\n"
 }

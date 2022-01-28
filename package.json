@@ -25,7 +25,13 @@
       "react-app",
       "react-app/jest",
       "prettier"
-    ]
+    ],
+    "rules": {
+      "linebreak-style": [
+        "warn",
+        "unix"
+      ]
+    }
   },
   "browserslist": {
     "production": [
