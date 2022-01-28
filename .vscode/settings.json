@@ -1,4 +1,4 @@
 {
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	// "files.eol": "\r\n"
+	"files.eol": "\n"
 }

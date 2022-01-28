@@ -5,7 +5,7 @@
 # have their line endings normalized (LF)
 #
 
-*          text eof=lf
+*          text=auto eof=lf
 
 #
 # quick info:
