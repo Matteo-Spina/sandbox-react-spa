@@ -34,6 +34,8 @@ const StyledFooter = styled.footer`
 
 const StyledMain = styled.main`
   /*  */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   /* as grid item */
   grid-column: 2 / -2;
   /* as grid container */
