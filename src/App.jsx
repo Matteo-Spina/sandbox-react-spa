@@ -3,6 +3,8 @@ import styled, {
   StyleSheetManager,
   createGlobalStyle,
 } from "styled-components/macro";
+import 'open-props/gradients'; // import gradient.min.css with webpack?
+
 // import StyledScaleGrid from "./Scale";
 
 const GlobalStyle = createGlobalStyle`
@@ -79,7 +81,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: var(--default-line-height);
     /*  */
-    background: var(--color-body);
+    background: var(--gradient-19);
   }
 
   /* 
