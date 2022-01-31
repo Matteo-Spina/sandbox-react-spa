@@ -2,7 +2,7 @@ import { Header, Footer, Main } from "./Sections";
 import styled, {
   StyleSheetManager,
   createGlobalStyle,
-} from "styled-components";
+} from "styled-components/macro";
 // import StyledScaleGrid from "./Scale";
 
 const GlobalStyle = createGlobalStyle`
