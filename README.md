@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Sandbox: _"react-spa"_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+repo: `sandbox-react-spa`
 
-## Available Scripts
+Focusing on the creation of a simple React app, developed along with a CSS-in-JS library and shipped to Vercel.
 
-In the project directory, you can run:
+> ⚠ This repo is a sandbox set up to try out code, report issues and collect notes about specific topics.
 
-### `npm start`
+## Main Goals
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Use [Create React App](https://create-react-app.dev/) to set up the project.
+- Try out a CSS-in-JS solution: [Styled Components](https://styled-components.com/).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Other Goals
 
-### `npm test`
+- Deploy the app to Vercel.
+- Try out [Renature](https://formidable.com/open-source/renature/) to make some animations.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Some notes on
 
-### `npm run build`
+tbd
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Todos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- update this README.
+- 🎆 merge `renature` animations.
+- 🚦 start making some tests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+Scripts from [CRA](https://create-react-app.dev/docs/available-scripts/).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| command     | description                                               |
+| ----------- | --------------------------------------------------------- |
+| `npm start` | CRA script: Runs the app in the dev mode @ localhost:3000 |
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Development Environment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+| about                               | tool       | notes     |
+| ----------------------------------- | ---------- | --------- |
+| [package manager](#package-manager) | `npm`      | `8.x`     |
+| [formatter](#code-style)            | `prettier` |
+| [linter](#code-style)               | `eslint`   |
+| [deployment](#deployment)           | ---        |
+| [system](#system)                   | ---        | about eol |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Package manager
 
-## Learn More
+### Code Style
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ESLint config are in `package.json`.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### System
 
-### `npm run build` fails to minify
+#### dealing with EOLs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Git is configured to normalize (ie using `LF`) files on checkin and checkout
+(with some notable exceptions for win specific files), in order to
+keep indexed files eol consistent with `LF` choice.
+
+This is achieved by setting up a `.gitattributes` file.
+
+```text
+
+* text=auto eol=lf
+
+```
+
+Prettier is default configured to set `LF` linebreaks. Running prettier formats files
+in the current working directory.
+
+ESlint has a rule that warns you if you are using `CRLF`.
+
+VSCode supports either `LF` and `CRLF`. I told VSC to use the former for all files:
+
+```jsonc
+// .vscode\settings.json
+
+"files.eol" = "\n"
+```
+
+however this is a sort of suggestion, and it works on creating new files; generally VSCode picks up the most common line terminator found on opening the file.
+
+see this [post](https://stackoverflow.com/questions/50904632/vscode-not-defaulting-to-n-end-of-line) which references
+also [vscode source](https://github.com/microsoft/vscode/blob/b8178e3e2f3f620ebdd31dfbfba937ff1b12ee04/src/vs/editor/common/model/pieceTreeTextBuffer/pieceTreeTextBufferBuilder.ts#L27).
+
+## Privacy
