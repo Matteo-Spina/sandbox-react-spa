@@ -2,7 +2,7 @@
 
 repo: `sandbox-react-spa`
 
-Focusing on the creation of a simple React app, developed along with a CSS-in-JS library and shipped to Vercel.
+A simple app created with React along with a CSS-in-JS library.
 
 > ⚠ This repo is a sandbox set up to try out code, report issues and collect notes about specific topics.
 
@@ -14,25 +14,27 @@ Focusing on the creation of a simple React app, developed along with a CSS-in-JS
 ## Other Goals
 
 - Deploy the app to Vercel.
-- Try out [Renature](https://formidable.com/open-source/renature/) to make some animations.
+- Try out [Renature](https://formidable.com/open-source/renature/) to create animations.
 
 ## Some notes on
 
 tbd
 
-## Todos
+## Roadmap
 
 - update this README.
 - 🎆 merge `renature` animations.
 - 🚦 start making some tests.
 
+consult a more complete list 👉 [ROADMAP](./ROADMAP).
+
 ## Usage
 
-Scripts from [CRA](https://create-react-app.dev/docs/available-scripts/).
+Scripts are inherited from [CRA](https://create-react-app.dev/docs/available-scripts/).
 
 | command     | description                                               |
 | ----------- | --------------------------------------------------------- |
-| `npm start` | CRA script: Runs the app in the dev mode @ localhost:3000 |
+| `npm start` | Runs the app in the dev mode @ localhost:3000 |
 
 ## Development Environment
 
@@ -48,7 +50,7 @@ Scripts from [CRA](https://create-react-app.dev/docs/available-scripts/).
 
 ### Code Style
 
-ESLint config are in `package.json`.
+Custom rules for ESlint was added in `package.json`.
 
 ### Deployment
 
