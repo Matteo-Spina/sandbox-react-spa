@@ -1,9 +1,8 @@
 import styled from "styled-components/macro";
 import { GridItem } from "./Items";
 import Article from "./Article";
-import { List } from "./List";
+import { Tabs, Statement, List } from "./Display";
 import testData from "./data.js";
-import { Tabs, Statement } from "./Display";
 // import OrbitSystem from "./OrbitSystem";
 
 const StyledHeader = styled.header`
@@ -15,7 +14,6 @@ const StyledHeader = styled.header`
   justify-content: flex-end;
   align-items: center;
   /* debug */
-  background-color: whitesmoke;
 `;
 // function Header() { return <StyledHeader /> }
 

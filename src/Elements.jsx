@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components/macro";
+import styled from "styled-components/macro";
 // import { StyledListItem } from "./Temporary";
 
 const ImageContainer = styled.div`
@@ -30,28 +30,4 @@ function Image({ src, alt, ...rest }) {
   );
 }
 
-// Logical positioning
-const StyledStack = styled.div`
-  display: flex;
-  /* only when is vertical */
-  ${({ horizontal }) =>
-    !horizontal &&
-    css`
-      width: 100%;
-      flex-direction: column;
-    `}
-  align-items: center;
-
-  & > div:last-child {
-    margin: 0;
-  }
-
-  && > * {
-    flex: 0 0 auto;
-    /* space between items */
-    ${(props) =>
-      props.horizontal ? "margin-right: 2rem;" : "margin-bottom: 1rem;"}
-  }
-`;
-
-export { StyledStack as Stack, Image };
+export default Image;

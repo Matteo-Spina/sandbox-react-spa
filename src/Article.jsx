@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { Tile } from "./Items";
-import { Image } from "./Elements";
+import Image from "./Elements";
 
 const Header = styled.header`
   & > h3 {

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components/macro";
-import { Stack } from "./Elements";
 import { Tile } from "./Items";
-import { ListItem } from "./List";
+import { Stack, ListItem } from "./List";
 
 const Header = styled.header`
   width: 100%;
@@ -36,7 +35,7 @@ function Statement({ content }) {
       <h2>{subject || "..."}</h2>
       <div>
         {statements.map((statement) => (
-          <Paragraph>{statement || "..."}</Paragraph>
+          <Paragraph key={statement}>{statement || "..."}</Paragraph>
         ))}
       </div>
     </Header>
@@ -51,17 +50,17 @@ const StyledDetails = styled.div`
 `;
 
 const TabsTile = styled(Tile)`
-  /* width: 50%; */
   padding: 1rem;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 `;
 
-// --------------------------------------
+/* -- Stack related components --*/
 
-// const StyledTab = styled(Tile)``;
-
+/**
+ * Tabs
+ */
 function Tabs({ items }) {
   const [current, setCurrent] = useState({ statement: "test", id: "000000" });
 
@@ -90,6 +89,26 @@ function Tabs({ items }) {
   );
 }
 
+
+/**
+ * List makes a simple use case for StyledStack.
+ * It is stateless.
+ * It receives generic items which are turned into ListItem-s.
+ * It doesnt handle events on items.
+ * It gets Stack styles.
+ * 
+ * @param {{horizontal: boolean, Object[]: items}} props - props
+ */
+function List({ horizontal, items }) {
+  return (
+    <Stack horizontal={horizontal}>
+      {items.map((item) => (
+        <ListItem key={item.id} item={item} square={horizontal} />
+      ))}
+    </Stack>
+  );
+}
+
 // ......................
 
 const StyledDisplay = styled.article`
@@ -110,4 +129,4 @@ function Display({ content }) {
   );
 }
 
-export { Tabs, Statement, Display };
+export { Tabs, List, Statement, Display };

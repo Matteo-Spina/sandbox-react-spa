@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components/macro";
 
 import { Tile } from "./Items";
-import { Stack, Image } from "./Elements";
+import Image from "./Elements";
 
 /* 
   list items are divs with a tile-looking
@@ -25,6 +25,7 @@ const StyledListItem = styled(Tile)`
     `}
 `;
 
+// todo square: {true, undefined, false}
 // ListItems can be square with no text, eg when inside a horizontal Stack
 function ListItem({ item, square, onClick, isHighLighted }) {
   let colors = item.link.colors;
@@ -35,12 +36,10 @@ function ListItem({ item, square, onClick, isHighLighted }) {
       colorA={colors.base}
       isHighLighted={isHighLighted}
     >
-      {/* to do remove hard wiring */}
+      {/* todo remove hard wiring */}
       <Image src={item.link.logos.main} alt="" bgColor="#fff" size={0.3} />
-      {/* with square option, prevent from rendering text */}
-      {square ? (
-        ""
-      ) : (
+      {/* render text only when is not square*/}
+      {!square && (
         <div
           style={{
             flex: "3 1",
@@ -55,17 +54,33 @@ function ListItem({ item, square, onClick, isHighLighted }) {
   );
 }
 
-/* 
-  List is a Stack and it is stateless
-*/
-function List({ horizontal, items }) {
-  return (
-    <Stack horizontal={horizontal}>
-      {items.map((item) => (
-        <ListItem key={item.id} item={item} square={horizontal} />
-      ))}
-    </Stack>
-  );
-}
+/**
+ * StyledStack is a ... for an eventual set of items.
+ * It is made up with flex container along with some style for his children.
+ * It can be used as Stack
+ */
+const StyledStack = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* when is vertical */
+  ${({ horizontal }) =>
+    !horizontal &&
+    css`
+      width: 100%;
+      flex-direction: column;
+    `}
+  /* children */
+  /* override margin for last item on every instance*/
+  & > div:last-child {
+    margin: 0;
+  }
+  /* children of this horizontal instance */
+  && > * {
+    flex: 0 0 auto;
+    ${(props) =>
+      props.horizontal ? "margin-right: 2rem;" : "margin-bottom: 1rem;"}
+  }
+`;
 
-export { ListItem, List };
+export { StyledStack as Stack, ListItem };
