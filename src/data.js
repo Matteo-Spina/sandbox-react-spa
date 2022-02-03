@@ -146,7 +146,7 @@ const testData = {
     // emphasis
     article: {
       title: brands.react.name,
-      subtitle: "font end",
+      subtitle: "front end",
       content: "working on it and something else",
       dateTime: new Date("1995-12-17T03:24:00"),
       ...brands.react,
