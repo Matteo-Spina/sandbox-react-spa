@@ -26,7 +26,7 @@ tbd
 - 🎆 merge `renature` animations.
 - 🚦 start making some tests.
 
-consult a more complete list 👉 [ROADMAP](./ROADMAP).
+consult a more complete list 👉 [ROADMAP](ROADMAP.md).
 
 ## Usage
 
