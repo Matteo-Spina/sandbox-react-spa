@@ -5,17 +5,17 @@ import nodeLogoPng from "./assets/node-180px.png";
 
 // define keys and aliases TODO
 // "node", "react", ...
-const keys = [
-  "react",
-  "cra",
-  "sc",
-  "node",
-  "vercel",
-  "electron",
-  "js",
-  "html",
-  "css",
-];
+// const keys = [
+//   "react",
+//   "cra",
+//   "sc",
+//   "node",
+//   "vercel",
+//   "electron",
+//   "js",
+//   "html",
+//   "css",
+// ];
 // define colors interface
 // {base: <color>, lighter? : <color> , darker?: <color>}
 // {base: <color>, bg: <color> , reversible: <boolean>}
