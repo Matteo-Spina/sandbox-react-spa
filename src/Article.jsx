@@ -39,7 +39,7 @@ function Content({ content }) {
 }
 
 const StyledArticle = styled(Tile)`
-  width: 100%;
+  width: 100%;  // wip⏺
   aspect-ratio: ${(props) =>
     props.square ? "8/9" : "auto"}; //Alert 8/9 not k*1rem
   /* inside */

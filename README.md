@@ -16,9 +16,33 @@ A simple app created with React along with a CSS-in-JS library.
 - Deploy the app to Vercel.
 - Try out [Renature](https://formidable.com/open-source/renature/) to create animations.
 
-## Some notes on
+## Highlighted topics
 
-tbd
+- **Responsive layout**
+
+  Layout is adaptive and switchs from 2 column to 1 in smaller viewport.
+It employs just css grid features to achieve responsiveness and it doesnt make use of media queries.
+Changing font size was taken into account but it has not been implemented yet.
+
+- **Typography**
+
+  Figuring out how to carry out this features properly.
+  - _type scales_;
+  - font metrics (see comments in `App.jsx`);
+  - Baseline typographic grid to gain vertical rhytm;
+
+- **Global**
+
+  Global theme to style things consistently.
+
+- **Rebase**
+
+  Before push to remotes, make your history cleaner. In your local branch just commit whenever you want.
+
+- **Pull request**
+
+  Simulated pull request to learn how to deal with them, as a contributor and as a maintainer.
+Code to pull ~~is made~~ (is meant to be) available through topic-specific branches.
 
 ## Roadmap
 
@@ -48,11 +72,15 @@ Scripts are inherited from [CRA](https://create-react-app.dev/docs/available-scr
 
 ### Package manager
 
+⚒
+
 ### Code Style
 
 Custom rules for ESlint was added in `package.json`.
 
 ### Deployment
+
+⚒
 
 ### System
 
@@ -89,3 +117,5 @@ see this [post](https://stackoverflow.com/questions/50904632/vscode-not-defaulti
 also [vscode source](https://github.com/microsoft/vscode/blob/b8178e3e2f3f620ebdd31dfbfba937ff1b12ee04/src/vs/editor/common/model/pieceTreeTextBuffer/pieceTreeTextBufferBuilder.ts#L27).
 
 ## Privacy
+
+⚒
