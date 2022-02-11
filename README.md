@@ -21,12 +21,13 @@ A simple app created with React along with a CSS-in-JS library.
 - **Responsive layout**
 
   Layout is adaptive and switchs from 2 column to 1 in smaller viewport.
-It employs just css grid features to achieve responsiveness and it doesnt make use of media queries.
-Changing font size was taken into account but it has not been implemented yet.
+  It employs just css grid features to achieve responsiveness and it doesnt make use of media queries.
+  Changing font size was taken into account but it has not been implemented yet.
 
 - **Typography**
 
   Figuring out how to carry out this features properly.
+
   - _type scales_;
   - font metrics (see comments in `App.jsx`);
   - Baseline typographic grid to gain vertical rhytm;
@@ -42,7 +43,7 @@ Changing font size was taken into account but it has not been implemented yet.
 - **Pull request**
 
   Simulated pull request to learn how to deal with them, as a contributor and as a maintainer.
-Code to pull ~~is made~~ (is meant to be) available through topic-specific branches.
+  Code to pull ~~is made~~ (is meant to be) available through topic-specific branches.
 
 ## Roadmap
 
@@ -56,8 +57,8 @@ consult a more complete list 👉 [ROADMAP](ROADMAP.md).
 
 Scripts are inherited from [CRA](https://create-react-app.dev/docs/available-scripts/).
 
-| command     | description                                               |
-| ----------- | --------------------------------------------------------- |
+| command     | description                                   |
+| ----------- | --------------------------------------------- |
 | `npm start` | Runs the app in the dev mode @ localhost:3000 |
 
 ## Development Environment
